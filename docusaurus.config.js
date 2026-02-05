@@ -40,15 +40,15 @@ const config = {
   staticDirectories: ['static'],
 
   // Set the production url of your site here
-  url: `https://martezr.github.io`,
+  url: `https://rivermeadow-software.github.io`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/rivermeadow-labs/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'martezr', // Usually your GitHub org/user name.
-  projectName: 'rivermeadow-labs', // Usually your repo name.
+  organizationName: 'rivermeadow-software', // Usually your GitHub org/user name.
+  projectName: 'enablement-docs', // Usually your repo name.
   deploymentBranch: 'main',
   trailingSlash: false,
 

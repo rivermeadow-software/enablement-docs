@@ -95,8 +95,8 @@ Convert from one Linux distribution to another
 
 The following are key benefits of the automated operating system upgrade feature:
 
-* **Reduce Technical Debt**
-* **Improved Security Posture**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations.
+* **OS Consolidation**
+* **Sunset Deprecated Operating Systems**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations.
 
 **Examples**
 

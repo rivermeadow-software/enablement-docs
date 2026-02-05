@@ -6,21 +6,22 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #1e618f;
-  --ifm-color-primary-dark: #1e618f;
-  --ifm-color-primary-darker: #1e618f;
-  --ifm-color-primary-darkest: #1e618f;
+  --ifm-color-primary: #0A76FD;
+  --ifm-color-primary-dark: #0A76FD;
+  --ifm-color-primary-darker: #0A76FD;
+  --ifm-color-primary-darkest: #0A76FD;
   --ifm-color-primary-light: #33925d;
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-color-info-contrast-background: white;
-  --ifm-alert-border-color: #1e618f;
-  --ifm-alert-border-color--info: #1e618f;
-  --ifm-color-info-dark: #1e618f;
+  --ifm-alert-border-color: #0A76FD;
+  --ifm-alert-border-color--info: #0A76FD;
+  --ifm-color-info-dark: #0A76FD;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-navbar-padding-horizontal: 24px;
-  --ifm-footer-background-color: #f6fafd;
+  --ifm-footer-background-color: #ffffff;
+  --ifm-alert-foreground-color: #000000;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -32,11 +33,72 @@
   --ifm-color-primary-light: #1e618f;
   --ifm-color-primary-lighter: #1e618f;
   --ifm-color-primary-lightest: #1e618f;
+    --ifm-footer-background-color: dark;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 .footer {
-  border-top: 1px solid var(--ifm-color-emphasis-300)
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding-top: 2px;
+  padding: 0px;
+}
+
+.footer_container {
+    max-width: 90rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.footer__in {
+    grid-column-gap: 4rem;
+    grid-row-gap: 4rem;
+    flex-flow: column;
+    display: flex;
+}
+
+.footer__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.footer__row__header {
+      justify-content: space-between;
+    display: flex;
+}
+
+.footer__item {
+  grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+    flex-flow: column;
+    display: flex;
+}
+
+.footer__links {
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+}
+
+.socials {
+    grid-column-gap: 1.25rem;
+    grid-row-gap: 1.25rem;
+    flex-flow: column;
+    display: flex;
+}
+
+.socials__link.socials__link--linkedin {
+    background-image: url(https://cdn.prod.website-files.com/692484d36106c47ef078ded6/692484d36106c47ef078df63_linkedin.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .commandpanel {
@@ -103,7 +165,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 /* 
 a:hover {
@@ -331,4 +393,26 @@ table th, table td {
   display: flex;
   align-items: center;
   width: fit-content;
+}
+
+.subheader-text {
+  font-size: 18px;
+}
+
+.coming-soon-badge {
+  background-color: lightgray;
+  color: black;
+  height: 2rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 5px; /* Makes corners slightly rounded */
+  display: flex;
+  align-items: center;
+  width: fit-content;
+}
+
+
+strong {
+  color: #000000;
 }

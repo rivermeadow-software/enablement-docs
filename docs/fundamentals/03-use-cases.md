@@ -1,9 +1,9 @@
 # Use Cases
 ---
 
-The RiverMeadow platform enables several different use cases
+One of the benefits of the RiverMeadow platform is its extensive use case addressability to migrate, optimize, and modernize workloads. 
 
-### On-Premises to Cloud Migrations
+### On-Premises to Public Cloud Migrations
 The RiverMeadow platform
 
 **Examples**
@@ -20,7 +20,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 <details>
   <summary>**Microsoft Hyper-V to Microsoft Azure**</summary>
 
-  Migrate Windows and Linux virtual machines running on-premises to Microsoft Azure
+  Migrate Windows and Linux virtual machines running on Microsoft Hyper-V on-premises to Microsoft Azure.
 
 </details>
 
@@ -31,7 +31,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 </details>
 
-### Cloud to Cloud Migrations
+### Public Cloud to Public Cloud Migrations
 
 Organizations are 
 
@@ -61,7 +61,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 </details>
 
 
-### VMware On-Premises to VMware on cloud migrations
+### VMware On-Premises to Cloud Hosted VMware Migrations
 
 Organizations looking to rapidly exit their on-premises datacenters or colocation facilities as part of a broader transition to the public cloud may utilize cloud hosted VMware solutions (EVS, AVS, GCVE, etc.) as a seamless on-ramp to place workloads close to cloud native services for AI and ML.
 
@@ -90,9 +90,9 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 </details>
 
-### VMware On-Premises to VMware Alternatives
+### VMware On-Premises to On-Premises VMware Alternatives
 
-Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to other alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines onto an extensive number of VMware alternatives.
+Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines onto an extensive number of VMware alternatives.
 
 **Examples**
 
@@ -101,21 +101,21 @@ The following are examples of how the RiverMeadow platform can enable migrations
 <details>
   <summary>**VMware vSphere to Red Hat OpenShift Virtualization**</summary>
 
-  Migrate virtual machines from VMware vSphere running on-premises to Red Hat OpenShift Virtualization running on-premises to a platform that enables virtual machines and containers to be run side by side on a single platform.
+  Migrate virtual machines from VMware vSphere running on-premises to Red Hat OpenShift Virtualization running on-premises. This enables virtual machines and containers to be run side by side on a single platform.
 
 </details>
 
 <details>
   <summary>**VMware vSphere to HPE Morpheus VM Essentials**</summary>
 
-  Migrate virtual machines from VMware vSphere running on-premises to the Microsoft managed VMware solution.
+  Migrate virtual machines from VMware vSphere running on-premises to HPE Morpheus VM Essentials.
 
 </details>
 
 <details>
   <summary>**VMware vSphere to Microsoft Hyper-V**</summary>
 
-  Migrate virtual machines from VMware vSphere running on-premises to the Google managed VMware solution.
+  Migrate virtual machines from VMware vSphere running on-premises to Microsoft Hyper-V.
 
 </details>
 
@@ -128,8 +128,8 @@ Organizations are
 The following are examples of how the RiverMeadow platform can enable automated large scale modernization initiatives to eliminate organizational technical debt:
 
 <details>
-  <summary>**VMware vSphere to VMware vSphere**</summary>
+  <summary>**Windows Server Upgrades on VMware vSphere**</summary>
 
-  Migrate virtual machines from VMware vSphere running on-premises to the Google managed VMware solution.
+  A powerful use case of the RiverMeadow platform is to utilize the ability to perform automated operating system upgrades without migrating the them to a different platform. This allows organizations to take advantage of this feature without needing to perform a migration.
 
 </details>

@@ -69,6 +69,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/courses', // Serve the docs at the site's root
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -88,19 +89,30 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-    docs: {
-      sidebar: {
-        hideable: false,
+      image: 'img/favicon.png',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
-    },
+      docs: {
+        sidebar: {
+          hideable: false,
+        },
+      },
       navbar: {
-//        title: 'Documentation',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'RiverMeadow Software Logo',
           src: 'img/rivermeadow_logo.png',
+          srcDark: 'img/full-logo_white@rgb.svg',
         },
         items: [
+/*        {
+          position: 'left',
+          to: '/',
+          label: 'Home',
+        },
+*/
           {
             type: 'dropdown',
             label: 'Courses',
@@ -108,31 +120,37 @@ const config = {
             items: [
               {
                 label: 'RiverMeadow Fundamentals',
-                to: '/docs/fundamentals/introduction',
+                to: '/courses/fundamentals/introduction',
+              },
+/*              {
+                label: 'RiverMeadow Advanced',
+                to: '/courses/advanced/introduction',
               },
               {
                 label: 'Amazon Web Services (AWS)',
-                to: '/docs/aws/introduction',
+                to: '/courses/aws/introduction',
               },
               {
                 label: 'Microsoft Azure',
-                to: '/docs/azure/introduction',
+                to: '/courses/azure/introduction',
               },
               {
                 label: 'Red Hat OpenShift',
-                to: '/docs/red-hat-openshift/introduction',
+                to: '/courses/red-hat-openshift/introduction',
               },
               {
                 label: 'HPE Morpheus VM Essentials',
-                to: '/docs/hpe-vm-essentials/introduction',
+                to: '/courses/hpe-vm-essentials/introduction',
               },
+*/
             ],
           },
-        {
+/*        {
           position: 'left',
           to: '/guides',
           label: 'Guides',
         },
+*/
         {
           position: 'left',
           to: '/demos',

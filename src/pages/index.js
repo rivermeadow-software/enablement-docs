@@ -40,11 +40,11 @@ export default function Home() {
           <div className="workshops">
             <div>
               <h1 nav-label="General" id="general">Introduction to RiverMeadow</h1>
-              <p>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the public clouds supported by the RiverMeadow platform.</p>
+              <p className='subheader-text'>Learn about the fundamentals of the RiverMeadow platform and how it can be used to migrate, optimize, and modernize workloads.</p>
               <ul className="cards-grid-list">
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started" className="card-link-anchor" href="/rivermeadow-labs/docs/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started" className="card-link-anchor" href="/rivermeadow-labs/courses/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -60,16 +60,19 @@ export default function Home() {
                 </li>
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/docs/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/courses/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
                           <img src="/rivermeadow-labs/img/rmicon-apple.png" alt="Apple Icon" style={{ width: 30, height: 30 }} />
                         </span>
-                        <span className="workshop-card-header">RiverMeadow 201</span>
+                        <span className="workshop-card-header">RiverMeadow 201</span>                        
                       </div>
                       <div className="workshop-card-description">
-                        <span className="workshop-card-text">Learn about the RiverMeadow platform and the platform's migration, optimization, and modernization features.</span>
+                        <span className="workshop-card-text">Learn about the technical details of the RiverMeadow platform such as architecture, components, and deployment.</span>
+                      </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
                       </div>
                     </div>
                   </div>
@@ -78,11 +81,11 @@ export default function Home() {
             </div>
             <div>
               <h1 nav-label="Public Cloud" id="publiccloud">Public Cloud Workload Mobility</h1>
-              <p>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the public clouds supported by the RiverMeadow platform.</p>
+              <p className='subheader-text'>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the private clouds supported by the RiverMeadow platform.</p>
               <ul className="cards-grid-list">
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/docs/aws/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/courses/aws/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -93,12 +96,15 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to AWS utilizing the RiverMeadow platform.</span>
                       </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - Azure" className="card-link-anchor" href="/rivermeadow-labs/docs/azure/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - Azure" className="card-link-anchor" href="/rivermeadow-labs/courses/azure/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -109,12 +115,15 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to Microsoft Azure utilizing the RiverMeadow platform.</span>
                       </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - Google Cloud" className="card-link-anchor" href="/rivermeadow-labs/docs/gcp/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - Google Cloud" className="card-link-anchor" href="/rivermeadow-labs/courses/gcp/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -125,6 +134,9 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to Google Cloud utilizing the RiverMeadow platform.</span>
                       </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
+                      </div>
                     </div>
                   </div>
                 </li>
@@ -132,11 +144,11 @@ export default function Home() {
             </div>
             <div>
               <h1 nav-label="Private Cloud" id="privatecloud">On-Premises Workload Mobility</h1>
-              <p>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the private clouds supported by the RiverMeadow platform.</p>
+              <p className='subheader-text'>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the on-premises or cloud hosted hypervisors supported by the RiverMeadow platform.</p>
               <ul className="cards-grid-list">
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/docs/hpe-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/rivermeadow-labs/courses/hpe-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -147,12 +159,15 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to HPE Morpheus VM Essentials utilizing the RiverMeadow platform.</span>
                       </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - Red Hat OpenShift" className="card-link-anchor" href="/rivermeadow-labs/docs/red-hat-openshift/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - Red Hat OpenShift" className="card-link-anchor" href="/rivermeadow-labs/courses/red-hat-openshift/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -163,12 +178,15 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to Red Hat OpenShift utilizing the RiverMeadow platform.</span>
                       </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
+                      </div>
                     </div>
                   </div>
                 </li>
                 <li>
                   <div className="workshop-card">
-                    <a aria-label="Get Started - Nutanix" className="card-link-anchor" href="/rivermeadow-labs/docs/nutanix/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                    <a aria-label="Get Started - Nutanix" className="card-link-anchor" href="/rivermeadow-labs/courses/nutanix/introduction"><span aria-hidden="true">&nbsp;</span></a>
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -178,6 +196,9 @@ export default function Home() {
                       </div>
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn how to migrate, optimize and modernize workloads to Nutanix AHV utilizing the RiverMeadow platform.</span>
+                      </div>
+                      <div>
+                         <span className="coming-soon-badge">Under Development</span>
                       </div>
                     </div>
                   </div>

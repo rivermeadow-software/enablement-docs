@@ -4,96 +4,9 @@ The RiverMeadow platform is a workload mobility solution that enables organizati
 
 ![RiverMeadow Solution Architecture](/img/rivermeadow_solution_overview.png)
 
-## Platform Features
-
-<details>
-  <summary>**Workload Mobility**</summary>
-
-  Migrate physical servers and virtual machines from any source to supported targets.
-
-</details>
-<details>
-  <summary>**Compute Rightsizing**</summary>
-
-  Rightsize VMware vSphere workloads based on historical performance data from the last 30 days.
-
-</details>
-<details>
-
-  <summary>**Storage Rightsizing**</summary>
-
-  Adjust the allocated storage for workloads during the migration to reduce excess or wasted allocated storage.
-
-</details>
-
-<details>
-
-  <summary>**Operating System (OS) Hardening**</summary>
-
-  Harden Windows Server and Red Hat Enterprise Linux (RHEL) systems using CIS benchmarks.
-
-</details>
-
-<details>
-
-  <summary>**OS Modernization**</summary>
-
-  Modernize Windows and Linux systems with the ability to perform automated operating system upgrades during the workload migration. In place upgrades are performed on the target clone to enable application compatibility testing in an isolated environment without impacting the source workload.
-
-</details>
-
-<details>
-
-  <summary>**SQL Modernization**</summary>
-
-  Modernize Microsoft SQL with the ability to perform automated upgrades during the workload migration. In place upgrades are performed on the target clone to enable application compatibility testing in an isolated environment without impacting the source workload.
-
-</details>
-
-<details>
-
-  <summary>**Linux OS Conversion**</summary>
-
-  Convert Linux workloads from one Linux distribution to another (Red Hat Enterprise Linux (RHEL), CentOS, Amazon Linux, Rocky Linux, AlmaLinux) to enable OS standardization
-
-  ![RiverMeadow Solution Architecture](/img/rivermeadow_os_conversion.png)
-
-
-</details>
-
-<details>
-
-  <summary>**Migration Extensions**</summary>
-
-  Execute Bash or PowerShell scripts to perform post-migration tasks such as software removal, software installation, application reconfiguration and more.
-
-  ![RiverMeadow Solution Architecture](/img/rivermeadow_migration_extension.png)
-
-</details>
-
-## Migration Sources
-
-
 
 ## Migration Targets
 The RiverMeadow platform enables the migration of physical, virtual or cloud workloads to the following HPE Morpheus VM Esssentials solutions:
 
 * HPE Morpheus VM Essentials Software
 * HPE Morpheus Enterprise Software
-
-## Migration Methods
-The RiverMeadow platform supports the migration of workloads using OS (agent) and VM (agentless) based migrations. Different features are supported by the different migration methods. The following table details the features that are supported by each migration method:
-
-| Feature | Description | VM Based (Agentless) | OS Based (Agent) |
-|---------|--|:-----:|:-----------:|
-| **Supported Sources** | Where the source systems can be migrated from | VMware vSphere | Any (physical or virtual)|
-| **Supported Operating Systems** | The supported operating systems for the source systems | Any Supported OS | Windows and Linux (x86 and ARM) |
-| **Supported Targets** | The targets supported by the migration method | Any Supported | Any Supported|
-| **Retain source IP and MAC address** | Keep the IP and MAC address of the source workload | Yes | No |
-| **Compute Righsizing** | Rightsize workload CPU and Memory during the workload migration | Yes | Yes (No recommendations) |
-| **Storage Rightsizing** | Rightsize storage volumes during the workload migration | No | Yes |
-| **Migration Extensions** | Execute post-migration scripts using Bash or PowerShell  |  No | Yes |
-| **OS Modernization** | Automated OS upgrades for Windows and Linux systems during the workload migration | No | Yes |
-| **SQL Modernization** | Automated Microsoft SQL Server upgrades during the workload migration | No | Yes |
-| **OS Hardening** | Harden Windows Server and RHEL systems using CIS Benchmarks | No | Yes |
-| **OS Conversion** | Convert between Linux distributions that are derivaties of the same base operating system  |  No | Yes |

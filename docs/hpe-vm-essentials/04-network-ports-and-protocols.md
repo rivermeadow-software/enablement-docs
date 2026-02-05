@@ -5,21 +5,21 @@
 The following table details the network ports and protocols that are required for all migrations:
 
 |     Name                             |     Description                                                                                     |     Source                 |     Target                 |     Port/Protocol    |
-|-------------------|-----------------------------------|----------------------------|----------------------------|----------------------|
-| **RiverMeadow Platform Access**    |     UI and API access to the RiverMeadow   SaaS platform |     Admin Workstation      |     RiverMeadow SaaS       |     443/TCP |
-| **Migration Appliance Orchestration** |     Orchestration   communication between the migration appliance and SaaS platform |     Migration Appliance    |     RiverMeadow SaaS | 443/TCP |
-| **Target Worker Orchestration** | Orchestration communication between target workers and the associated migration appliance |  Target Worker | Migration Appliance | 443/TCP |
+|-------------------|-----------------------------------|:----------------------------:|:----------------------------:|:----------------------:|
+| **RiverMeadow Platform Access**    | UI and API access to the RiverMeadow platform |     Admin Workstation      |     RiverMeadow SaaS Platform | 443/TCP |
+| **Migration Appliance Orchestration** | Control plane communication between the migration appliance and SaaS platform |     Migration Appliance    |     RiverMeadow SaaS Platform | 443/TCP |
+| **Target Worker Orchestration** | Control plane communication between target workers and the associated migration appliance |  Target Worker | Migration Appliance | 443/TCP |
 | **Migration Appliance API Access** | API communication between the target workers and the associated migration appliance|  Target Worker | Migration Appliance | 8888/TCP |
 
 ## OS Based Migration Ports and Protocols
 The following table details the network ports and protocols that are required for OS based migrations in addition to the general platform network ports and protocols:
 
 | Name                            | Description          | Source                     | Target                           | Port/Protocol   |
-|---------------------------------|----------------------|----------------------------|-------------------------|-----------------|
-|  **Migration Data Transfer** |     Data Transfer    |      Target Worker      |     Source Workload              |     5994/TCP    |
-|  **Windows Utility Installation (OPTIONAL)**  | Automated utility installation|     Migration Appliance    |     Source Workload (Windows)    |     445/TCP     |
-|  **Windows Utility Installation (OPTIONAL)**  | Automated utility installation|     Migration Appliance    |     Source Workload (Windows)    |     5985/TCP     |
-|  **Linux Utility Installation (OPTIONAL)**    | Automated utility installation |     Migration Appliance    |     Source Workload (Linux)      |     22/TCP      |
+|---------------------------------|----------------------|:----------------------------:|:-------------------------:|:-----------------:|
+|  **Migration Data Transfer** | Data transfer from the source server to the "clone" on the HVM hypervisor |      Target Worker      |     Source Server              |     5994/TCP    |
+|  **Windows Utility Installation (OPTIONAL)**  | Windows SMB access to automatically deploy the migration utility to the source Windows server |     Migration Appliance    |     Source Server (Windows)    |     445/TCP     |
+|  **Windows Utility Installation (OPTIONAL)**  | Windows WinRM access to automatically deploy the migration utility to the source Windows server |     Migration Appliance    |     Source Server (Windows)    |     5985/TCP     |
+|  **Linux Utility Installation (OPTIONAL)**    | SSH access to automatically deploy the migration utility to the source Linux server  |     Migration Appliance    |     Source Server (Linux)      |     22/TCP      |
 
 
 ## VM Based Migration Ports and Protocols

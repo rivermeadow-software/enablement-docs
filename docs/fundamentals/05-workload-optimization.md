@@ -48,28 +48,8 @@ The following are examples of storage optimization that can be completed utilizi
 
 </details>
 
-### Operating System Hardening
+### Operating System (OS) Hardening
 
-Windows Server and Red Hat Enterprise Linux (RHEL)
+The RiverMeadow platform enables security hardening Windows Server and Red Hat Enterprise Linux (RHEL) using CIS (Center for Information Security) Benchmarks to apply best practice configurations for improving system security.
 
-**OS Hardening Examples**
-
-The following are examples of operating system hardening using the RiverMeadow platform:
-
-<details>
-  <summary>**Windows Server 2019 Hardening**</summary>
-
-  Harden a Windows Server 2019 virtual machine to CIS Benchmark Level 1 or Level 2 standards.
-
-  ```js
-  console.log("Markdown features including the code block are available");
-  ```
-
-</details>
-
-<details>
-  <summary>**Red Hat Enterprise Linux 9 Hardening**</summary>
-
-  This is the detailed content
-
-</details>
+**Custom Profiles**

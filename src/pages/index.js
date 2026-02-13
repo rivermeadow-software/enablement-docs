@@ -41,7 +41,7 @@ export default function Home() {
             <div>
               <h1 nav-label="General" id="general">Introduction to RiverMeadow</h1>
               <p className='subheader-text'>Learn about the fundamentals of the RiverMeadow platform and how it can be used to migrate, optimize, and modernize workloads.</p>
-              <ul className="cards-grid-list">
+              <ul className="courses-grid-list">
                 <li>
                   <div className="workshop-card">
                     <a aria-label="Get Started" className="card-link-anchor" href="/courses/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
@@ -50,7 +50,7 @@ export default function Home() {
                         <span className="logo-image">
                         <img src="/img/rmicon-apple.png" alt="Apple Icon" style={{ width: 30, height: 30 }} />
                         </span>
-                        <span className="workshop-card-header">RiverMeadow 101</span>
+                        <span className="workshop-card-header">RiverMeadow Fundamentals</span>
                       </div>
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn about the RiverMeadow platform and the platform's migration, optimization, and modernization features.</span>
@@ -59,14 +59,14 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/courses/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - AWS" className="card-link-anchor" href="/courses/fundamentals/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
                           <img src="/img/rmicon-apple.png" alt="Apple Icon" style={{ width: 30, height: 30 }} />
                         </span>
-                        <span className="workshop-card-header">RiverMeadow 201</span>                        
+                        <span className="workshop-card-header">RiverMeadow Advanced</span>                        
                       </div>
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn about the technical details of the RiverMeadow platform such as architecture, components, and deployment.</span>
@@ -82,10 +82,10 @@ export default function Home() {
             <div>
               <h1 nav-label="Public Cloud" id="publiccloud">Public Cloud Workload Mobility</h1>
               <p className='subheader-text'>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the private clouds supported by the RiverMeadow platform.</p>
-              <ul className="cards-grid-list">
+              <ul className="courses-grid-list">
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/courses/aws/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - AWS" className="card-link-anchor" href="/courses/aws/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -103,8 +103,8 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - Azure" className="card-link-anchor" href="/courses/azure/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - Azure" className="card-link-anchor" href="/courses/azure/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -122,8 +122,8 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - Google Cloud" className="card-link-anchor" href="/courses/gcp/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - Google Cloud" className="card-link-anchor" href="/courses/gcp/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -145,10 +145,10 @@ export default function Home() {
             <div>
               <h1 nav-label="Private Cloud" id="privatecloud">On-Premises Workload Mobility</h1>
               <p className='subheader-text'>Migrate Windows and Linux workloads from any physical, virtual, or cloud environment to one of the on-premises or cloud hosted hypervisors supported by the RiverMeadow platform.</p>
-              <ul className="cards-grid-list">
+              <ul className="courses-grid-list">
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - AWS" className="card-link-anchor" href="/courses/hpe-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - HPE Morpheus VM Essentials" className="card-link-anchor" href="/courses/hpe-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -166,8 +166,8 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - Red Hat OpenShift" className="card-link-anchor" href="/courses/red-hat-openshift/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - Red Hat OpenShift" className="card-link-anchor" href="/courses/red-hat-openshift/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">
@@ -185,8 +185,8 @@ export default function Home() {
                   </div>
                 </li>
                 <li>
-                  <div className="workshop-card">
-                    <a aria-label="Get Started - Nutanix" className="card-link-anchor" href="/courses/nutanix/introduction"><span aria-hidden="true">&nbsp;</span></a>
+                  <div className="workshop-card-disabled">
+                    {/* <a aria-label="Get Started - Nutanix" className="card-link-anchor" href="/courses/nutanix/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
                     <div className="workshop-card-content">
                       <div className="workshop-card-logo">
                         <span className="logo-image">

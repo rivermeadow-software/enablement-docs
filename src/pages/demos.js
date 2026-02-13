@@ -46,14 +46,14 @@ function HomepageHeader() {
 
 const demos = [
     {
-        title: 'Server migrations to VMware vSphere',
+        title: 'VM migration to VMware vSphere',
         description: 'Experience a guided demo of migrating servers to VMware vSphere using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
         image: VMwareMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/esajh5kbgml7?embed=popup',
         categories: ['vmware', "mobility","interactive"],
     },
     {
-        title: 'Server migrations to Amazon Web Services (AWS)',
+        title: 'VM migration to Amazon Web Services (AWS)',
         description: 'Experience a guided demo of migrating servers to Amazon Web Services (AWS) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
         image: AWSMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/s7ci5jeropfx?embed=popup',
@@ -73,14 +73,14 @@ const demos = [
   },
 */
   {
-    title: 'Server migrations to HPE Morpheus VM Essentials',
+    title: 'VM migration to HPE Morpheus VM Essentials',
     description: 'Experience a guided demo of migrating servers to HPE Morpheus VM Essentials using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: VMEMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/tlywo8kgkklt?embed=popup',
     categories: ['vme', "mobility","interactive"],
   },
   {
-    title: 'Server migrations to Microsoft Hyper-V',
+    title: 'VM migration to Microsoft Hyper-V',
     description: 'Experience a guided demo of migrating servers to Microsoft Hyper-V using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: HyperVMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/13gzntcd79dk?embed=popup',
@@ -95,7 +95,7 @@ const demos = [
   },
   */
   {
-    title: 'Server migrations to Red Hat OpenShift',
+    title: 'VM migration to Red Hat OpenShift',
     description: 'Experience a guided demo of migrating servers to Red Hat OpenShift using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: OpenShiftMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/2koimciug9s1?embed=popup',
@@ -110,6 +110,30 @@ const demos = [
  // },
   // Add additional demos as needed
 ];
+
+function copyDemoLink(demoIframeSrc) {
+    const shareableLink = demoIframeSrc.replace('?embed=popup', '');
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareableLink).then(() => {
+          //  alert('Demo link copied to clipboard!');
+        }, () => {
+            alert('Failed to copy demo link.');
+        });
+    } else {
+        // fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = shareableLink;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+          //  alert('Demo link copied to clipboard!');
+        } catch (err) {
+            alert('Failed to copy demo link.');
+        }
+        document.body.removeChild(textarea);
+    }
+}
 
 function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc, categories}) {
     const [open, setOpen] = React.useState(false);
@@ -156,7 +180,7 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                         justifyContent: 'center'
                     }}
                 >
-                    <div
+                    <div className='demoModal'
                         style={{
                             background: '#fff',
                             padding: 8,
@@ -165,9 +189,17 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                             boxShadow: '0 2px 16px rgba(0,0,0,0.2)'
                         }}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
+                        <div className="demoModalHeader" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
                         <h2 style={{ margin: 0 }}>{demoTitle}</h2>
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                            <p>Copied!</p>
+                            <button
+                                className="button button--secondary"
+                                onClick={() => copyDemoLink(demoIframeSrc)}
+                                style={{backgroundColor: '#000000', borderColor: '#000000', color: '#FFFFFF', marginRight: '8px'}}
+                            >
+                                Share Demo
+                            </button>
                             <button
                                 className="button button--secondary"
                                 onClick={() => setOpen(false)}
@@ -177,7 +209,7 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                             </button>
                         </div>
                         </div>
-                        <div>
+                        <div className='demoModalIFrame'>
                             <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
                             <div className="sl-embed" style={{position:'relative',paddingBottom:'calc(62.76% + 0px)',width:'100%',height:0,transform:'scale(1)'}}>
                                 <iframe loading="lazy" className="sl-demo" src={demoIframeSrc} name="sl-embed" allow="fullscreen" style={{position:'absolute',top:0,left:0,width:'100%!important',height:'100%!important',border:'1px solid rgba(63,95,172,0.35)',boxShadow:'0px 0px 18px rgba(26, 19, 72, 0.15)',boxSizing:'border-box'}}></iframe>
@@ -197,11 +229,9 @@ export default function Home() {
   const [filteredDemos, setFilteredDemos] = React.useState(demos);
 
   function handleFilterChange(selectedOptions) {
-    console.log('Selected options:', selectedOptions);
     if (selectedOptions && selectedOptions.length > 0) {
-        console.log('Filtering demos based on selected options.');
         const selectedValues = selectedOptions.map(option => option.value);
-        demos.filter(demo => console.log('Demo categories:', demo.categories));
+        //demos.filter(demo => console.log('Demo categories:', demo.categories));
         setFilter(true);
         // Change filtering to match ANY selected value, not ALL
         const filtered = demos.filter(demo =>

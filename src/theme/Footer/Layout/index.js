@@ -16,14 +16,15 @@ export default function FooterLayout({style, links, logo, copyright}) {
 </svg></div></div><div class="footer__links"><div class="socials"><a href="https://www.linkedin.com/company/rivermeadow-software" target="_blank" class="socials__link socials__link--linkedin w-inline-block"></a><a href="https://x.com/rivermeadow1" target="_blank" class="socials__link socials__link--x w-inline-block"></a><a href="https://www.facebook.com/rivermeadow/" target="_blank" class="socials__link socials__link--fb w-inline-block"></a><a href="https://www.youtube.com/channel/UCa4nJYZ8h_MSv5zVLuriCbA" target="_blank" class="socials__link socials__link--youtube is-hidden w-inline-block"></a></div></div></div></div>
 
         </div> */}
-          <div class="footer__row footer__row--bottom">
-            <div class="footer__col footer__col--left">
+
+          <div className="footer__row footer__row--bottom">
+            <div className="footer__col footer__col--left">
               <span>Copyright © {new Date().getFullYear()} RiverMeadow Software, Inc. All rights reserved.</span>
             </div>
-            <div class="footer__col footer__col--right">
-              <a href="https://docs.rivermeadow.com/privacypolicy" target="_blank">Privacy Policy</a>
-              <span class="footer__link-separator">|</span>
-              <a href="https://docs.rivermeadow.com" target="_blank">Documentation</a>
+            <div className="footer__col footer__col--right">
+              <a href="https://docs.rivermeadow.com/privacypolicy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              <span className="footer__link-separator">|</span>
+              <a href="https://docs.rivermeadow.com" target="_blank" rel="noopener noreferrer">Documentation</a>
             </div>
           </div>
       </div>

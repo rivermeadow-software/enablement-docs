@@ -97,4 +97,32 @@ The following are examples of storage optimization that can be completed utilizi
 
 The RiverMeadow platform enables security hardening Windows Server and Red Hat Enterprise Linux (RHEL) using CIS (Center for Information Security) Benchmarks to apply best practice configurations for improving system security.
 
-**Custom Profiles**
+<details>
+  <summary>**Level 1 Hardening for Windows Server**</summary>
+
+  This is the detailed content
+
+  **Allocated Storage** = 2,000 GB
+
+  **Used Storage** = 600 GB
+  
+  **Price per GB** = .08
+  
+  2,000 GB x .08 = $160 USD per month
+
+</details>
+
+<details>
+  <summary>**Level 2 Hardening for Red Hat Enterprise Linux (RHEL)**</summary>
+
+  This is the detailed content
+
+  **Allocated Storage** = 2,000 GB
+
+  **Used Storage** = 600 GB
+  
+  **Price per GB** = .08
+  
+  2,000 GB x .08 = $160 USD per month
+
+</details>

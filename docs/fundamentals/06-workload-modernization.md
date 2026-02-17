@@ -16,7 +16,7 @@ The following are key benefits of the operating system modernization feature:
 * **Risk-free Upgrades**: The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
 * **Improved Security Posture**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations. Upgrading the operating system is the only way to receive regular security patches for end of life operating systems.
 * **Eliminate Microsoft ESUs**: Microsoft Window Server operating systems that have reached the end of mainstream support enter a three (3) year period where they are eligible to continue to receive security updates but at an additional cost each year during the three (3 year period). Upgrading the operating system to a newer version eliminates this additional cost.
-* **Reduce Technical Debt**: Each operating system version that needs to be managed in an IT environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of different operating systems in the environment streamlines operational tasks and considerations by allowing IT staff to focus on a smaller number of operating system verisons.
+* **Reduced Technical Debt**: Each operating system version that needs to be managed in an IT environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of different operating systems in the environment streamlines operational tasks and considerations by allowing IT staff to focus on a smaller number of operating system verisons.
 
 **OS Modernization Examples**
 
@@ -48,21 +48,22 @@ A detailed list of supported operating systems that can be upgraded is available
 
 :::
 
-
 ### Microsoft SQL Server Modernization
 
 The RiverMeadow platform supports the automated upgrade of Microsoft SQL Server to go from older versions to newer versions. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated upgrade of Microsoft SQL Server on the clone. 
 
-* **Improved Security Posture**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations.
+* **Improved Security Posture**: Applying security patches to applications in a timely manner is one of the key pillars of IT security. Versions of Microsoft SQL that have reached their end of life and no longer receive security patches from Microsoft pose a significant risk to organizations.
 * **Eliminate Microsoft ESUs**: Microsoft SQL Server versions that have reached the end of mainstream support enter a three (3) year period where they are eliglbe to continue to receive security updates at an additional cost each year.
-* **Reduce Technical Debt**: Each operating system version that needs to be managed in an environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of operating systems in the environment streamlines operational tasks and considerations by only needing to worry about a few operating system versions.
+* **Reduced Technical Debt**: Each SQL Server version that needs to be managed in an environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of versions of Microsoft SQL Server in the environment streamlines operational tasks and considerations by only needing to worry about a few versions.
 
 **SQL Modernization Examples**
 
 The following are examples of modernization that can be completed utilizing the SQL Modernization feature:
 
 <details>
-  <summary>**Microsoft SQL Server 2012 to Microsoft SQL Server 2022**</summary>
+  <summary>**Microsoft SQL Server 2014 to Microsoft SQL Server 2022**</summary>
+
+  Automate the upgrade of Microsoft SQL Server 2014 to Microsoft SQL Server 2022 during the migration to eliminate the technical debt but also the annual fees for extended security updates (ESUs).
 
 </details>
 
@@ -80,9 +81,9 @@ The RiverMeadow platform supports the automated conversion of Linux distribution
 
 The following are key benefits of the automated Linux OS conversion feature:
 
-* **OS Consolidation**: T
-* **Sunset Deprecated Operating Systems**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations.
-* **Reduce Licensing Costs**: 
+* **OS Consolidation**: Managing multiple distinct Linux distributions creates a management overhead burden as IT administrators need to account for minor differences between distributions. The ability to standardize on a subset of distributions or on a single distribution reduces or eliminates that additional overhead.
+* **Sunset Deprecated Operating Systems**: Operating systems such as CentOS are viewed as deprecated and migrating to a distribution like Rocky Linux or AlmaLinux can be seen as a daunting project full of risks. The OS conversion feature eliminates the risk of conversion and accelerates the process with the platform's automation.
+* **Reduced Licensing Costs**: Many organizations are migrating workloads to public clouds such as Amazon and as part of that migration they are considering what operating systems make sense for them moving forward. Red Hat Enterprise Linux (RHEL) is one such operating system and organizations are reducing their RHEL licensing costs by transitioning to an operating system like Amazon Linux. The RiverMeadow platform enables this OS conversion in a seamless fashion during the migration process.
 
 **Examples**
 

@@ -19,6 +19,13 @@ Migrations
 ![Preflight Migration Checks](./preflight_migration_checks.png)
 <center>**Preflight Migration Checks**</center>
 
+#### Key Benefits
+
+The following are key benefits of the operating system modernization feature:
+
+* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+* **Optimized Storage Space:**
+
 ### Integrated Automation
 
 Automated removal of existing virtualization tooling (i.e. - VMware tools, Virtio drivers, etc.) and installation of virtualization tooling applicable to the target platform.
@@ -26,7 +33,14 @@ Automated removal of existing virtualization tooling (i.e. - VMware tools, Virti
 ![Integrated Post Migration Automation](./integrated_post_migration_automation.png)
 <center>**Integrated Automation**</center>
 
-### Custom Automation
+#### Key Benefits
+
+The following are key benefits of the operating system modernization feature:
+
+* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+* **Optimized Storage Space:**
+
+### Migration Extensions (Custom Automation)
 
 Automate post migration tasks such as agent removal or installation using the integrated automation engine.
 
@@ -104,6 +118,12 @@ The operating system must be supported on the target hypervisor or cloud.
 
 </details>
 
+
+:::tip
+
+A detailed list of the supported versions of Microsoft SQL Server that can be upgraded is available in the RiverMeadow documentation: (https://docs.rivermeadow.com/support-matrix-for-app-modernization)
+
+:::
 
 
 ## Migration Targets

@@ -48,6 +48,51 @@ The following are examples of storage optimization that can be completed utilizi
 
 </details>
 
+### VM Rightsizing
+
+Reduce cloud operating costs with recuced
+
+#### Key Benefits
+
+The following are key benefits of the operating system modernization feature:
+
+* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+* **Optimized Storage Space:**
+
+**Storage Optimization Examples**
+
+The following are examples of storage optimization that can be completed utilizing the storage rightsizing feature:
+
+
+<details>
+  <summary>**Windows Server 2019 VM with a 2 TB data drive**</summary>
+
+  This is the detailed content
+
+  **Allocated Storage** = 2,000 GB
+
+  **Used Storage** = 600 GB
+  
+  **Price per GB** = .08
+  
+  2,000 GB x .08 = $160 USD per month
+
+</details>
+
+<details>
+  <summary>**Red Hat Enterprise Linux (RHEL) VM with a 300 GB data drive**</summary>
+
+  This is the detailed content **15%** utilization
+
+  | | |
+  |-|-|
+  | Allocated Storage | 300 GB |
+  | Used Storage | 60 GB |
+  | Price per GB | .08 |
+  | 
+
+</details>
+
 ### Operating System (OS) Hardening
 
 The RiverMeadow platform enables security hardening Windows Server and Red Hat Enterprise Linux (RHEL) using CIS (Center for Information Security) Benchmarks to apply best practice configurations for improving system security.

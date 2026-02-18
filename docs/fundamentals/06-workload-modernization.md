@@ -1,7 +1,7 @@
 # Workload Modernization
 ---
 
-One of the challenges that organizations face with migrations is that a "lift and shift" migration is widely viewed as the simplest and most straightforward option. The other option that organizations also consider is to refactor the application to utilize cloud native solutions or migrate to containerization but this is option can be costly and time-consuming. 
+One of the challenges that organizations face with migrations is that a "lift and shift" migration is widely viewed as the simplest and most straightforward option. The other option that organizations also consider is to refactor the application to utilize cloud native solutions or migrate to containerization but this option can be costly and time-consuming. 
 
 ### Operating System Modernization
 The RiverMeadow platform supports the automated upgrade of Linux and Windows operating systems to go from older versions to newer versions. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated upgrade of the operating system on the clone. 
@@ -31,14 +31,16 @@ The following are examples of modernization that can be completed utilizing the 
 
 
 <details>
-  <summary>**Red Hat Enterprise Linux 6.3 to Red Hat Enterprise Linux 9.2**</summary>
+  <summary>**Red Hat Enterprise Linux 6.x to Red Hat Enterprise Linux 9.x**</summary>
 
+Automate the upgrade of systems running older versions of Red Hat Enterprise Linux (RHEL) like 6.x to a newer version like 9.x to remove the older operating systems from the environment.
 
 </details>
 
 <details>
   <summary>**SUSE Linux 12 to SUSE Linux 15**</summary>
 
+Automate the upgrade of systems running older versions of SUSE Linux like 12.x to a newer version like 15.x to remove the older operating systems from the environment.
 
 </details>
 

@@ -63,7 +63,6 @@ The following are key benefits of the operating system modernization feature:
 
 The following are examples of storage optimization that can be completed utilizing the storage rightsizing feature:
 
-
 <details>
   <summary>**Windows Server 2019 VM with a 2 TB data drive**</summary>
 
@@ -96,6 +95,16 @@ The following are examples of storage optimization that can be completed utilizi
 ### Operating System (OS) Hardening
 
 The RiverMeadow platform enables security hardening Windows Server and Red Hat Enterprise Linux (RHEL) using CIS (Center for Information Security) Benchmarks to apply best practice configurations for improving system security.
+
+Key Benefits
+The following are key benefits of the operating system modernization feature:
+
+* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+* **Optimized Storage Space:**
+
+**OS Hardening Examples**
+
+The following are examples of security hardening that can be completed utilizing the operating system hardening feature:
 
 <details>
   <summary>**Level 1 Hardening for Windows Server**</summary>

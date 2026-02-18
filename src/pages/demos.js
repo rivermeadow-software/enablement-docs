@@ -184,7 +184,6 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                         style={{
                             background: '#fff',
                             padding: 8,
-                            width: '80%',
                             borderRadius: 8,
                             boxShadow: '0 2px 16px rgba(0,0,0,0.2)'
                         }}
@@ -192,7 +191,6 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                         <div className="demoModalHeader" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
                         <h2 style={{ margin: 0 }}>{demoTitle}</h2>
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            <p>Copied!</p>
                             <button
                                 className="button button--secondary"
                                 onClick={() => copyDemoLink(demoIframeSrc)}
@@ -266,7 +264,7 @@ export default function Home() {
                     </div>
                 </div>
                 </div>
-              <ul className="cards-grid-list">
+              <ul className="demos-grid-list">
                 {demosToShow.map((demo, index) => (
                   <li key={index}>
                     <DemoCardWithModal demoTitle={demo.title} demoDescription={demo.description} demoImage={demo.image} demoIframeSrc={demo.iframeSrc} categories={demo.categories} />
@@ -276,7 +274,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="demoJourney">
+        {/* <div className="demoJourney">
           <div className="demoJourneyCard">
             <div className="demoJourneyBody">
                 <div className="demoJourneyTitle">
@@ -292,7 +290,7 @@ export default function Home() {
                     </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </main>
     </Layout>
   );

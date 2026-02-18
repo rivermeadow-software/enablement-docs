@@ -324,6 +324,12 @@ table th, table td {
   font-weight: bold
 }
 
+@media (max-width: 767px) {
+    .demoJourney {
+        display: none !important;
+    }
+}
+
 .demoJourney {
   padding-top: 3rem;
   padding-bottom: 9rem;
@@ -435,4 +441,19 @@ strong {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   padding-left: 0px;
   gap: 24px;
+}
+
+.demos-grid-list {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding-left: 0px;
+  gap: 24px;
+}
+
+
+.demoModal {
+  width: 70%;
+  border: none;
+  display: block;
 }

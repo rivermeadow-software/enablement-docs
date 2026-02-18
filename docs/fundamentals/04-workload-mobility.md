@@ -1,16 +1,14 @@
 # Workload Mobility
 ---
 
-Migrations 
+Rapidly migrate workloads from any source to over a dozen supported targets with 200+ preflight migration checks, integrated automation, and a post-migration automation engine to identify potential migration issues and automate time-consuming post migration tasks.
 
-
-**Benefits**
-
-* **Near Zero Downtime Migrations:** Migrations are completed with minimal downtime (minutes) which reduces the overall impact and risk to the business.
-* Reduced migration time
-
+* Derisked Migrations
+* Rapid Migrations
 
 ## Mobility Features
+
+The following platform features enable rapid mobility:
 
 ### Preflight Migration Checks
 
@@ -24,7 +22,6 @@ Migrations
 The following are key benefits of the operating system modernization feature:
 
 * **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-* **Optimized Storage Space:**
 
 ### Integrated Automation
 
@@ -38,11 +35,20 @@ Automated removal of existing virtualization tooling (i.e. - VMware tools, Virti
 The following are key benefits of the operating system modernization feature:
 
 * **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-* **Optimized Storage Space:**
 
 ### Migration Extensions (Custom Automation)
 
 Automate post migration tasks such as agent removal or installation using the integrated automation engine.
+
+![Migration Extension](./migration_extension.png)
+<center>**Migration Extension**</center>
+
+#### Key Benefits
+
+The following are key benefits of the operating system modernization feature:
+
+* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+
 
 ## Migration Sources
 The RiverMeadow platform migrating workloads from effectively any source including physical servers, virtual machines, and public cloud instances.

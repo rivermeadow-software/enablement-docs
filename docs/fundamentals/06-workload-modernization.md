@@ -54,6 +54,9 @@ A detailed list of supported operating systems that can be upgraded is available
 
 The RiverMeadow platform supports the automated upgrade of Microsoft SQL Server to go from older versions to newer versions. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated upgrade of Microsoft SQL Server on the clone. 
 
+![SQL Modernization](./sql_modernization.png)
+<center>**Microsoft SQL Server Modernization**</center>
+
 * **Improved Security Posture**: Applying security patches to applications in a timely manner is one of the key pillars of IT security. Versions of Microsoft SQL that have reached their end of life and no longer receive security patches from Microsoft pose a significant risk to organizations.
 * **Eliminate Microsoft ESUs**: Microsoft SQL Server versions that have reached the end of mainstream support enter a three (3) year period where they are eliglbe to continue to receive security updates at an additional cost each year.
 * **Reduced Technical Debt**: Each SQL Server version that needs to be managed in an environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of versions of Microsoft SQL Server in the environment streamlines operational tasks and considerations by only needing to worry about a few versions.
@@ -78,6 +81,9 @@ A detailed list of the supported versions of Microsoft SQL Server that can be up
 ### Linux OS Conversion
 
 The RiverMeadow platform supports the automated conversion of Linux distributions that are RPM-based derivatives. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated conversion to the desired Linux distribution on the clone. 
+
+![Linux OS Conversion](./linux_os_conversion.png)
+<center>**Linux OS Conversion**</center>
 
 #### Key Benefits
 

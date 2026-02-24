@@ -31,9 +31,38 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 </details>
 
+### VMware On-Premises to On-Premises VMware Alternatives
+
+Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines onto an extensive number of VMware alternatives.
+
+**Examples**
+
+The following are examples of how the RiverMeadow platform can enable migrations from VMware vSphere running on-premises to VMware alternatives running on-premises:
+
+<details>
+  <summary>**VMware vSphere to Red Hat OpenShift Virtualization**</summary>
+
+  Migrate virtual machines from VMware vSphere running on-premises to Red Hat OpenShift Virtualization running on-premises. This enables virtual machines and containers to be run side by side on a single platform.
+
+</details>
+
+<details>
+  <summary>**VMware vSphere to HPE Morpheus VM Essentials**</summary>
+
+  Migrate virtual machines from VMware vSphere running on-premises to HPE Morpheus VM Essentials.
+
+</details>
+
+<details>
+  <summary>**VMware vSphere to Microsoft Hyper-V**</summary>
+
+  Migrate virtual machines from VMware vSphere running on-premises to Microsoft Hyper-V.
+
+</details>
+
 ### Public Cloud to Public Cloud Migrations
 
-Organizations are 
+Organizations are regularly adopting multi-cloud strategies to reduce the risk of a cloud provider outage impacting the availability of their mission critical applications. 
 
 **Examples**
 
@@ -87,35 +116,6 @@ The following are examples of how the RiverMeadow platform can enable migrations
   <summary>**VMware vSphere to Google Compute VMware Engine (GCVE)**</summary>
 
   Migrate virtual machines from VMware vSphere running on-premises to the Google managed VMware solution using the RiverMeadow platform.
-
-</details>
-
-### VMware On-Premises to On-Premises VMware Alternatives
-
-Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines onto an extensive number of VMware alternatives.
-
-**Examples**
-
-The following are examples of how the RiverMeadow platform can enable migrations from VMware vSphere running on-premises to VMware alternatives running on-premises:
-
-<details>
-  <summary>**VMware vSphere to Red Hat OpenShift Virtualization**</summary>
-
-  Migrate virtual machines from VMware vSphere running on-premises to Red Hat OpenShift Virtualization running on-premises. This enables virtual machines and containers to be run side by side on a single platform.
-
-</details>
-
-<details>
-  <summary>**VMware vSphere to HPE Morpheus VM Essentials**</summary>
-
-  Migrate virtual machines from VMware vSphere running on-premises to HPE Morpheus VM Essentials.
-
-</details>
-
-<details>
-  <summary>**VMware vSphere to Microsoft Hyper-V**</summary>
-
-  Migrate virtual machines from VMware vSphere running on-premises to Microsoft Hyper-V.
 
 </details>
 

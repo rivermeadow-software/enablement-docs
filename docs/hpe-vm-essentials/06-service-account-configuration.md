@@ -2,10 +2,13 @@
 ---
 The RiverMeadow platform utilizes the HPE Morpheus VM Essentials REST API to orchestrate the migration of workloads to the HVM hypervisor. The security best practice is to create a dedicated service account that will be used by the RiverMeadow Meadow migration appliance to interact with the REST API. This service account should be granted only the privileges that are required to ensure that it aligns with the security principle of least privilege.
 
-**User Account:** A user account (local or identity provider) should be created in the HPE Morpheus VM Essentials platform with a secure password for use by the RiverMeadow migration appliance.
+### User Role
 
-**User Role:** A user role should also be created to assign the required privileges to the user account. Privileges or permissions within HPE Morpheus VM Essentials and HPE Morpheus Enterprise are associated with a user role for assignment.
+A dedicated user role should be created to assign the required privileges to the user account. Privileges or permissions within HPE Morpheus VM Essentials and HPE Morpheus Enterprise are associated with a user role for assignment.
 
+### User Account
+
+A dedicated user account (local or identity provider) should be created in the HPE Morpheus VM Essentials platform with a secure password for use by the RiverMeadow migration appliance.
 
 ### Role Privileges
 
@@ -47,7 +50,6 @@ The following privileges are required by the user role to migrate workloads usin
 | Remote Console | User |
 | Snapshots | Full |
 | Snapshots: Linked Clone	| Full |
-
 
 
 :::tip

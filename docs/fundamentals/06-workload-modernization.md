@@ -1,7 +1,7 @@
 # Workload Modernization
 ---
 
-One of the challenges that organizations face with migrations is that a "lift and shift" migration is widely viewed as the simplest and most straightforward option. The other option that organizations also consider is to refactor the application to utilize cloud native solutions or migrate to containerization but this option can be costly and time-consuming. 
+One of the considerations that organizations face with migrations is whether move workloads as-is (lift and shift) or go through the process of refactoring applications for containerization or cloud native alignment (modernization). Lift and shift brings the same problems into a new environment and refactoring is often is costly and time-consuming. The RiverMeadow platform enables the modernization of workloads during the migration process to accelerate technical debt reduction.
 
 ### Operating System Modernization
 The RiverMeadow platform supports the automated upgrade of Linux and Windows operating systems to go from older versions to newer versions. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated upgrade of the operating system on the clone. 

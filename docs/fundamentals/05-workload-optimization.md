@@ -15,7 +15,7 @@ Reduce cloud operating costs with recuced
 The following are key benefits of the operating system modernization feature:
 
 * **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-* **Optimized Storage Space:**
+* **Reduce Data Transfer:**
 
 **Storage Optimization Examples**
 
@@ -102,10 +102,11 @@ The RiverMeadow platform enables security hardening Windows Server and Red Hat E
 ![OS Hardening](./os_hardening.png)
 <center>**OS Hardening**</center>
 
-Key Benefits
-The following are key benefits of the operating system modernization feature:
+#### Key Benefits
 
-* **Improved Security:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
+The following are key benefits of the operating system hardening feature:
+
+* **Improved Security:** Align the operating system with an industry standard bechmark to improve the system security during the migration.
 * **Reduced Risk** The clone based methodology reduces the risk associated with breaking applications due to operating system hardening as all of the hardening is performed on the clone.
 
 **OS Hardening Examples**
@@ -115,13 +116,13 @@ The following are examples of security hardening that can be completed utilizing
 <details>
   <summary>**Level 1 Hardening for Windows Server**</summary>
 
-  This is the detailed content
+  Hardening of a Windows Server workload to apply level 1 controls from the CIS benchmark for Windows Server during the migration of the workload.
 
 </details>
 
 <details>
   <summary>**Level 2 Hardening for Red Hat Enterprise Linux (RHEL)**</summary>
 
-  This is the detailed content
+  Hardening of a Red Hat Enterprise Linux (RHEL) workload to apply level 2 controls from the CIS benchmark for RHEL during the migration of the workload.
 
 </details>

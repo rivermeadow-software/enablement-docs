@@ -6,10 +6,6 @@ Rapidly migrate workloads from any source to over a dozen supported targets with
 * Derisked Migrations
 * Rapid Migrations
 
-## Mobility Features
-
-The following platform features enable rapid mobility:
-
 ### Preflight Migration Checks
 
 200+ integrated preflight migration checks are executed at various stages of the migration process to provide visibility into common issues that can prevent a successful migration.
@@ -55,7 +51,11 @@ The RiverMeadow platform migrating workloads from effectively any source includi
 
 ### Supported Operating Systems
 
-The RiverMeadow platform supports the most common versions of Windows and Linux.
+The RiverMeadow platform supports the most common versions of Windows and Linux running on x86 or ARM platforms.
+
+:::info
+The operating system must be supported on the target hypervisor or cloud.
+:::
 
 <details>
   <summary>**Windows Operating Systems**</summary>
@@ -127,7 +127,7 @@ The operating system must be supported on the target hypervisor or cloud.
 
 :::tip
 
-A detailed list of the supported versions of Microsoft SQL Server that can be upgraded is available in the RiverMeadow documentation: (https://docs.rivermeadow.com/support-matrix-for-app-modernization)
+A detailed list of the supported operating systems that can be migrated is available in the RiverMeadow documentation: (https://docs.rivermeadow.com/support-matrix)
 
 :::
 

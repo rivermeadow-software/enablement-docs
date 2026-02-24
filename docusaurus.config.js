@@ -85,6 +85,18 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guides',
+        path: 'guides',
+        routeBasePath: 'guides',
+        sidebarPath: './sidebarsGuides.js',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -145,12 +157,13 @@ const config = {
 */
             ],
           },
-/*        {
-          position: 'left',
-          to: '/guides',
-          label: 'Guides',
-        },
-*/
+          {
+            label: 'Guides',
+            to: 'guides/introduction',
+            position: 'left',
+            docsPluginId: 'guides',
+            activeBasePath: 'guides',
+          },
         {
           position: 'left',
           to: '/demos',

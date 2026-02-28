@@ -1,0 +1,33 @@
+---
+#id: doc-markdown
+title: Migration appliance deployment
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: HPE Morpheus VM Essentials
+sidebar_position: 3
+description: Troubleshooting Migration Appliance deployment
+
+---
+
+This guide details a best practice deployment of the RiverMeadow migration appliance to HPE Morpheus VM Essentials.
+
+### Service Account
+
+The migration appliance interacts with the HPE Morpheus VM Essentials REST API and should utilize a dedicated service account for that communication.
+
+**Create Dedicated User Role**
+
+
+
+### Service Account Credential Handling
+
+HPE Morpheus VM Essentials includes a native secrets management solution (Cypher) that integrates with the
+
+
+### IP Address Management
+
+Most production networks will utilize static IP addresses
+
+#### Manual Static IP Address
+
+#### IPAM or Native Pool Assignment

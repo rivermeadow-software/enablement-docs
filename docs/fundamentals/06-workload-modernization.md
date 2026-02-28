@@ -1,7 +1,7 @@
 # Workload Modernization
 ---
 
-One of the considerations that organizations face with migrations is whether move workloads as-is (lift and shift) or go through the process of refactoring applications for containerization or cloud native alignment (modernization). Lift and shift brings the same problems into a new environment and refactoring is often is costly and time-consuming. The RiverMeadow platform enables the modernization of workloads during the migration process to accelerate technical debt reduction.
+One of the considerations that organizations face with migrations is whether to move workloads as-is (lift and shift) or go through the process of refactoring applications for containerization or cloud native alignment (modernization). Lift and shift migrations bring the same problems into the new environment and refactoring is often costly and time-consuming. The RiverMeadow platform provides a streamlined modernization capability to accelerate technical debt reduction during the workload migration.
 
 ### Operating System Modernization
 The RiverMeadow platform supports the automated upgrade of Linux and Windows operating systems to go from older versions to newer versions. The process is done in a derisked fashion as the platform creates an exact copy of the source system and performs the automated upgrade of the operating system on the clone. 
@@ -13,8 +13,8 @@ The RiverMeadow platform supports the automated upgrade of Linux and Windows ope
 
 The following are key benefits of the operating system modernization feature:
 
-* **Risk-free Upgrades**: The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-* **Improved Security Posture**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached their end of life and no longer receive security patches from the vendor pose a significant risk to organizations. Upgrading the operating system is the only way to receive regular security patches for end of life operating systems.
+* **Risk-free Upgrades**: The operating system modernization uses a clone based methodology to remove the risk associated with performing in-place upgrades that rely on snapshots and typically require an extended period of downtime simply for testing the upgrade.
+* **Improved Security Posture**: Applying security patches to systems in a timely manner is one of the key pillars of IT security. Operating systems that have reached end of life and no longer receive security patches from the vendor pose a significant security risk. Upgrading the operating system is the only way to receive regular security patches for end of life operating systems.
 * **Eliminate Microsoft ESUs**: Microsoft Window Server operating systems that have reached the end of mainstream support enter a three (3) year period where they are eligible to continue to receive security updates but at an additional cost each year during the three (3 year period). Upgrading the operating system to a newer version eliminates this additional cost.
 * **Reduced Technical Debt**: Each operating system version that needs to be managed in an IT environment requires different considerations such as different patches, different security configurations, and more. Consolidating the number of different operating systems in the environment streamlines operational tasks and considerations by allowing IT staff to focus on a smaller number of operating system verisons.
 

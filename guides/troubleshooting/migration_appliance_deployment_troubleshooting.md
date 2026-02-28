@@ -1,5 +1,5 @@
 ---
-id: doc-markdown
+#id: doc-markdown
 title: Migration Appliance
 hide_title: false
 hide_table_of_contents: false
@@ -17,7 +17,7 @@ The RiverMeadow migration appliance is an essential control plane component that
 * [External Network Connectivity](#external-network-connectivity)
 * [Appliance Configuration Data](#appliance-configuration-data)
 
-### Local Network Connectivity
+## Local Network Connectivity
 
 This section of the guide details troubleshooting steps to verify that the migration appliance has local network connectivity.
 
@@ -33,11 +33,11 @@ The migration appliance needs to be able to reach other systems on the local net
 
 ![](./migration_appliance_network_troubleshooting_tools.png)
 
-### Name Resolution
+## Name Resolution
 
 This section of the guide details troubleshooting steps to verify that the migration appliance can properly resolve any hostname or DNS names used in the appliance configuration.
 
-**Can the migration appliance resolve the hostname associated with the target REST API**
+**Can the migration appliance resolve the hostname associated with the target REST API?**
 
 The RiverMeadow platform supports migrating workloads to virtualization platforms (vSphere, HPE Morpheus VM Essentials, Nutanix, Hyper-V, and OpenStack) where the migration appliance interacts with the platform's REST API to orchestrate the migration process. In scenarios where a hostname or FQDN is utilized in the configuration for the REST API, the ability for the migration to properly resolve that name may be required. The migration appliance includes network troubleshooting tools that can be used to verify DNS resolution. The tools can be accessed from the appliance TUI (Text User Interface) using the VM or instance console that can be reached from the cloud console or virtualization platform management server.
 
@@ -45,9 +45,31 @@ The following screenshot shows an example of failed name resolution in which the
 
 ![](./migration_dns_resolution_failure.png)
 
-### External Network Connectivity
+**Can the migration appliance resolve migrate.rivermeadow.com?**
+
+The RiverMeadow migration appliance communicates with the RiverMeadow platform using the migrate.rivermeadow.com hostname and needs to be able to properly resolve the DNS name associated to properly connect.
+
+## External Network Connectivity
 
 This section of the guide details troubleshooting steps to verify that the migration appliance has external network connectivity to reach the RiverMeadow hosted platform.
 
-### Appliance Configuration Data
+## Appliance Configuration Data
 This section of the guide details troubleshooting steps to verify that the migration appliance has been properly configured.
+
+### VMware vSphere
+
+The configuration data for the RiverMeadow migration appliance when deployed to VMware vSphere is applied via OVF properties. This allows the migration to read the configuration data during the initial appliance bootstrap process as well as after appliance reboots.
+
+### HPE Morpheus VM Essentials
+
+The configuration data for the RiverMeadow migration appliance for HPE Morpheus VM Essentials is applied via the user data associated with the virtual image. This allows the migration to read the configuration data during the initial appliance bootstrap process.
+
+**Configuration Updates**
+
+1. Update the virtual image with the desired changes (i.e. - user account, manager appliance hostname or IP address)
+2. Delete the existing instance deployed from the virtual image.
+3. Provision a new instance from the updated virtual image.
+
+### Microsoft Hyper-V
+
+The configuration data for the RiverMeadow migration appliance for Microsoft Hyper-V is applied via the Hyper-V Data Exchange service (KVP). This allows the migration to read the configuration data during the appliance boot process.

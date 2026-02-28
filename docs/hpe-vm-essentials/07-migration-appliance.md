@@ -54,3 +54,9 @@ HPE Morpheus VM Essentials supports integrating with 3rd party IPAM solutions su
 
 ## Multiple Clusters
 A single VM Essentials manager appliance can support managing multiple clusters (i.e. - dev, prod, etc.). A single migration 
+
+# Source Worker Appliance
+
+The source worker appliance is used for VM based or agentless migrations. The appliance is deployed to the source VMware vSphere cluster from the RiverMeadow migration appliance deployed into the target HPE Morpheus VM Esssentials environment.
+
+![](/img/rivermeadow_source_worker_appliance.png)

@@ -2,8 +2,6 @@
 ---
 The migration profile defines the plan or configuration for migrating a workload from the source environment to the target environment.
 
-
-
 ### Placement Settings
 
 | Name | Description |

@@ -3,8 +3,15 @@
 
 One of the benefits of the RiverMeadow platform is its extensive use case addressability to migrate, optimize, and modernize workloads. 
 
+* [On-Premises to Public Cloud Migrations](#on-premises-to-public-cloud-migrations)
+* [VMware On-Premises to On-Premises VMware Alternatives](#vmware-on-premises-to-on-premises-vmware-alternatives)
+* [Public Cloud to Public Cloud Migrations](#public-cloud-to-public-cloud-migrations)
+* [VMware On-Premises to Cloud Hosted VMware Migrations](#vmware-on-premises-to-cloud-hosted-vmware-migrations)
+* [Modernization Factory](#modernization-factory)
+
 ### On-Premises to Public Cloud Migrations
-The RiverMeadow platform
+
+Organizations are continuing to evaluate on-premises to public cloud migrations for various different reasons such as reducing IT operating costs, seeking to drive innovation with AI in the cloud, or optimize IT operations with a cloud operating model. The RiverMeadow platform supports migrating VMware vSphere workloads to public clouds such as AWS, Azure, and GCP.
 
 **Examples**
 
@@ -13,7 +20,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 <details>
   <summary>**VMware vSphere to Amazon Web Services (AWS) EC2**</summary>
 
-  Migrate VMware vSphere virtual machines running on-premises to AWS EC2
+  Licensing costs for VMware vSphere is forcing organizations to look for alternatives and AWS EC2 provides robust and battle tested IaaS solution for migrating workloads to as part of a VMware exit. 
 
 </details>
 
@@ -33,7 +40,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 ### VMware On-Premises to On-Premises VMware Alternatives
 
-Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines onto an extensive number of VMware alternatives.
+Many organizations are looking to migrate virtual machines from VMware vSphere on-premises to alternatives on-premises such as Nutanix AHV, HPE Morpheus VM Essentials, Red Hat OpenShift, and others due to rising licensing costs. The RiverMeadow platform includes support for migrating VMware vSphere virtual machines to an extensive number of VMware alternatives.
 
 **Examples**
 
@@ -62,7 +69,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 ### Public Cloud to Public Cloud Migrations
 
-Organizations are regularly adopting multi-cloud strategies to reduce the risk of a cloud provider outage impacting the availability of their mission critical applications. 
+Organizations are regularly adopting multi-cloud strategies to reduce the risk of a cloud provider outage impacting the availability of their mission critical applications. The RiverMeadow platform enables the migration of workloads from one public cloud to another to accelerate cloud to cloud migrations.
 
 **Examples**
 
@@ -92,7 +99,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 ### VMware On-Premises to Cloud Hosted VMware Migrations
 
-Organizations looking to rapidly exit their on-premises datacenters or colocation facilities as part of a broader transition to the public cloud may utilize cloud hosted VMware solutions (EVS, AVS, GCVE, etc.) as a seamless on-ramp to place workloads close to cloud native services for AI and ML.
+Organizations looking to rapidly exit their on-premises datacenters or colocation facilities as part of a broader transition to the public cloud may utilize cloud hosted VMware solutions (EVS, AVS, GCVE, etc.) as a seamless on-ramp to place workloads close to cloud native services for AI and ML. The RiverMeadow platform enables migrating VMware workloads from on-premises to one of the cloud hosted VMware vSphere solutions such as EVS, AVS, GCVE, and others.
 
 **Examples**
 
@@ -121,7 +128,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 
 ### Modernization Factory
 
-Organizations are 
+Technical debt is a major problem for organizations and one that only continues to grow as organizations adopt new technologies. The adoption and implementation of new technologies typically doesn't eliminate the old technology but simply adds another layer that needs care and feeding. The RiverMeadow platform helps address the technical debt from legacy systems with automated OS upgrades, automated Microsoft SQL Server upgrades, and Linux OS conversion.
 
 **Examples**
 

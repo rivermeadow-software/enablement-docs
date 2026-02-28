@@ -2,7 +2,7 @@
 ---
 
 ## General Ports and Protocols
-The following table details the network ports and protocols that are required for all migrations:
+The following table details the network ports and protocols that are required for all migrations (OS based and VM based):
 
 |     Name                             |     Description                                                                                     |     Source                 |     Target                 |     Port/Protocol    |
 |-------------------|-----------------------------------|:----------------------------:|:----------------------------:|:----------------------:|

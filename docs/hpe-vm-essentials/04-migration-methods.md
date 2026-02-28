@@ -1,14 +1,8 @@
 # Migration Methods
 ---
-The RiverMeadow platform supports the migration of workloads using OS and VM based migrations. Different features are supported by the different migration methods. 
+The RiverMeadow platform supports the migration of servers using OS based or VM based migrations. Different features are supported by the different migration methods. 
 
-### OS Based Migrations
-
-
-### VM Based Migrations
-
-
-### Comparison Table
+### Feature Comparison Table
 
 The following table details the features that are supported by each migration method:
 

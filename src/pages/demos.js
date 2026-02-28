@@ -7,11 +7,13 @@ import AWSMigration from '/img/demo_aws_migration.png';
 import VMEMigration from '/img/demo_vme_migration.png';
 import OpenShiftMigration from '/img/demo_openshift_migration.png';
 import HyperVMigration from '/img/demo_hyperv_migration.png';
+import GoogleCloudMigration from '/img/google_cloud_migration.jpg';
 import Select from 'react-select'
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
-import React from 'react';
+import React, { useState } from "react";
+import Tooltip from '../components/Tooltip';
 
 const options = [
   { value: 'mobility', label: 'Mobility' },
@@ -22,7 +24,7 @@ const options = [
 const technologies = [
     { value: 'aws', label: 'Amazon Web Services (AWS)' },
  //   { value: 'azure', label: 'Microsoft Azure' },
- //   { value: 'gcp', label: 'Google Cloud Platform (GCP)' },
+    { value: 'gcp', label: 'Google Cloud Platform (GCP)' },
     { value: 'hyperv', label: 'Microsoft Hyper-V' },
  //   { value: 'nutanix', label: 'Nutanix AHV' },
     { value: 'openshift', label: 'Red Hat OpenShift' },
@@ -44,12 +46,13 @@ function HomepageHeader() {
   );
 }
 
-const demos = [
+const demos = [   
     {
         title: 'VM migration to VMware vSphere',
         description: 'Experience a guided demo of migrating servers to VMware vSphere using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
         image: VMwareMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/esajh5kbgml7?embed=popup',
+        demoType: 'interactive',
         categories: ['vmware', "mobility","interactive"],
     },
     {
@@ -57,6 +60,7 @@ const demos = [
         description: 'Experience a guided demo of migrating servers to Amazon Web Services (AWS) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
         image: AWSMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/s7ci5jeropfx?embed=popup',
+        demoType: 'interactive',
         categories: ['aws', "mobility","interactive"],
     },
 /*    {
@@ -69,6 +73,7 @@ const demos = [
     title: 'Cloud migrations to Google Cloud Platform',
     description: 'Experience a guided demo of migrating workloads to Google Cloud Platform (GCP) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
     image: 'https://www.techzine.eu/wp-content/uploads/2020/06/nutanix-prism.png',
+    type: 'interactive',
     categories: ['gcp', "mobility","interactive"],
   },
 */
@@ -77,6 +82,7 @@ const demos = [
     description: 'Experience a guided demo of migrating servers to HPE Morpheus VM Essentials using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: VMEMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/tlywo8kgkklt?embed=popup',
+    demoType: 'interactive',
     categories: ['vme', "mobility","interactive"],
   },
   {
@@ -84,6 +90,7 @@ const demos = [
     description: 'Experience a guided demo of migrating servers to Microsoft Hyper-V using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: HyperVMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/13gzntcd79dk?embed=popup',
+    demoType: 'interactive',
     categories: ['hyperv', "mobility","interactive"],
   },
   /*
@@ -91,6 +98,7 @@ const demos = [
     title: 'VM migrations to Nutanix AHV',
     description: 'Experience a guided demo of migrating workloads to Nutanix AHV using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: NutanixMigration,
+    type: 'interactive',
     categories: ['nutanix', "mobility","interactive"],
   },
   */
@@ -99,49 +107,95 @@ const demos = [
     description: 'Experience a guided demo of migrating servers to Red Hat OpenShift using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
     image: OpenShiftMigration,
     iframeSrc: 'https://rivermeadow.storylane.io/demo/2koimciug9s1?embed=popup',
+    demoType: 'interactive',
     categories: ['openshift', "mobility","interactive"],
   },
+    {
+        title: 'Google Cloud migration with OS upgrade',
+        description: 'Watch a video demo of migrating servers to Google Cloud with an OS upgrade using the RiverMeadow platform.',
+        image: GoogleCloudMigration,
+        iframeSrc: '',
+        videoLink: "https://player.vimeo.com/video/1169049532?title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+        demoType: 'video',
+        categories: ['gcp', "mobility","video"],
+    }, 
+
+
+
+
 //  {
 //    title: 'RHEL OS conversion to Amazon Linux',
 //    description: 'Experience a guided demo of migrating servers to Red Hat OpenShift using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
 //    image: OpenShiftMigration,
 //    iframeSrc: 'https://rivermeadow.storylane.io/demo/gtcenwzprazs?embed=popup',
+//    demoType: 'interactive',
 //    categories: ['aws', "modernization","interactive"],
  // },
   // Add additional demos as needed
 ];
 
-function copyDemoLink(demoIframeSrc) {
-    const shareableLink = demoIframeSrc.replace('?embed=popup', '');
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(shareableLink).then(() => {
-          //  alert('Demo link copied to clipboard!');
-        }, () => {
-            alert('Failed to copy demo link.');
-        });
-    } else {
-        // fallback for older browsers
-        const textarea = document.createElement('textarea');
-        textarea.value = shareableLink;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-            document.execCommand('copy');
-          //  alert('Demo link copied to clipboard!');
-        } catch (err) {
-            alert('Failed to copy demo link.');
+function copyDemoLink(demoIframeSrc, videoLink, setShow) {
+
+
+    if (demoIframeSrc) {
+        const shareableLink = demoIframeSrc.replace('?embed=popup', '');
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareableLink).then(() => {
+            //  alert('Demo link copied to clipboard!');
+            }, () => {
+                alert('Failed to copy demo link.');
+            });
+        } else {
+            // fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = shareableLink;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+            //  alert('Demo link copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy demo link.');
+            }
+            document.body.removeChild(textarea);
         }
-        document.body.removeChild(textarea);
     }
+    if (videoLink) {
+        const videoId = videoLink.match(/\/video\/(\d+)/)?.[1];
+        const shareableLink = `https://vimeo.com/${videoId}`;
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(shareableLink).then(() => {
+            //  alert('Demo link copied to clipboard!');
+            }, () => {
+                alert('Failed to copy demo link.');
+            });
+        } else {
+            // fallback for older browsers
+            const textarea = document.createElement('textarea');
+            textarea.value = shareableLink;
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+            //  alert('Demo link copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy demo link.');
+            }
+            document.body.removeChild(textarea);
+        }
+    }
+    setShow(true);
 }
 
-function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc, categories}) {
+function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc, categories, demoType, videoLink}) {
     const [open, setOpen] = React.useState(false);
+    const [show, setShow] = React.useState(false);
+
     return (
         <div>
             <div className="workshop-card" style={{ padding: '0px'}}>
                 <div className="workshop-card-image" style={{ borderTopRightRadius: '6px', borderTopLeftRadius: '6px'}}>
-                    <img src={demoImage} alt={demoTitle} style={{ objectFit: 'cover',borderTopRightRadius: '6px', borderTopLeftRadius: '6px' }} />
+                    <img src={demoImage} alt={demoTitle} style={{ objectFit: 'stretch',borderTopRightRadius: '6px', borderTopLeftRadius: '6px' }} />
                 </div>
                 <div className="workshop-card-content" style={{ padding: '16px' }}>
                     <div className="workshop-card-logo">
@@ -164,7 +218,12 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                         style={{ marginTop: 16, width: '100%', backgroundColor: '#0A76FD', borderColor: '#0A76FD' }}
                         onClick={() => setOpen(true)}
                     >
-                        Launch Demo
+                        {demoType === 'video' && (
+                            <>Watch Demo</>
+                        )}
+                        {demoType === 'interactive' && (
+                            <>Launch Demo</>
+                        )}
                     </button>
                 </div>
             </div>
@@ -191,13 +250,23 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                         <div className="demoModalHeader" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem' }}>
                         <h2 style={{ margin: 0 }}>{demoTitle}</h2>
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            <button
-                                className="button button--secondary"
-                                onClick={() => copyDemoLink(demoIframeSrc)}
-                                style={{backgroundColor: '#000000', borderColor: '#000000', color: '#FFFFFF', marginRight: '8px'}}
-                            >
-                                Share Demo
-                            </button>
+                            <div style={{ position: "relative", display: "inline-block" }}>
+                                <button
+                                    className="button button--secondary"
+                                    onClick={() => copyDemoLink(demoIframeSrc, videoLink, setShow)}
+                                    style={{backgroundColor: '#000000', borderColor: '#000000', color: '#FFFFFF', marginRight: '8px'}}
+                                >
+                                    Share Demo
+                                </button>
+                                <Tooltip
+                                    visible={show}
+                                    onClose={() => setShow(false)}
+                                    position="top"
+                                    timeout={5000}
+                                >
+                                    Shareable demo link copied to clipboard!
+                                </Tooltip>
+                            </div>
                             <button
                                 className="button button--secondary"
                                 onClick={() => setOpen(false)}
@@ -207,12 +276,19 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                             </button>
                         </div>
                         </div>
+                        {demoType === 'video' && (
+                            <div className='videoModalIFrame'>
+                                <div style={{padding:'51.41% 0 0 0',position:'relative'}}><iframe src={videoLink} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerPolicy="strict-origin-when-cross-origin" style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} title="Google Cloud + OS Upgrade Demo"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                            </div>
+                        )}
+                        {demoType === 'interactive' && (
                         <div className='demoModalIFrame'>
                             <script async src="https://js.storylane.io/js/v2/storylane.js"></script>
                             <div className="sl-embed" style={{position:'relative',paddingBottom:'calc(62.76% + 0px)',width:'100%',height:0,transform:'scale(1)'}}>
                                 <iframe loading="lazy" className="sl-demo" src={demoIframeSrc} name="sl-embed" allow="fullscreen" style={{position:'absolute',top:0,left:0,width:'100%!important',height:'100%!important',border:'1px solid rgba(63,95,172,0.35)',boxShadow:'0px 0px 18px rgba(26, 19, 72, 0.15)',boxSizing:'border-box'}}></iframe>
                             </div>
                         </div>
+                        )}
                     </div>
                 </div>
             )}
@@ -242,7 +318,7 @@ export default function Home() {
   }
 
   const demosToShow = filter ? filteredDemos : demos;
-
+  
   return (
     <Layout
       title="RiverMeadow Product Demos"
@@ -267,7 +343,7 @@ export default function Home() {
               <ul className="demos-grid-list">
                 {demosToShow.map((demo, index) => (
                   <li key={index}>
-                    <DemoCardWithModal demoTitle={demo.title} demoDescription={demo.description} demoImage={demo.image} demoIframeSrc={demo.iframeSrc} categories={demo.categories} />
+                    <DemoCardWithModal demoTitle={demo.title} demoDescription={demo.description} demoImage={demo.image} demoIframeSrc={demo.iframeSrc} categories={demo.categories} demoType={demo.demoType} videoLink={demo.videoLink} />
                   </li>
                 ))}
               </ul>

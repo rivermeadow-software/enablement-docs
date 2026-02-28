@@ -1,10 +1,7 @@
 # Workload Mobility
 ---
 
-Rapidly migrate workloads from any source to over a dozen supported targets with 200+ preflight migration checks, integrated automation, and a post-migration automation engine to identify potential migration issues and automate time-consuming post migration tasks.
-
-* Derisked Migrations
-* Rapid Migrations
+One of the challenges that customers face with migrations is often the need to quickly migrate to align with timelines that are defined by the business and the need to safely migrate to reduce the impact to the business.
 
 ### Preflight Migration Checks
 
@@ -13,24 +10,12 @@ Rapidly migrate workloads from any source to over a dozen supported targets with
 ![Preflight Migration Checks](./preflight_migration_checks.png)
 <center>**Preflight Migration Checks**</center>
 
-#### Key Benefits
-
-The following are key benefits of the operating system modernization feature:
-
-* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-
 ### Integrated Automation
 
 Automated removal of existing virtualization tooling (i.e. - VMware tools, Virtio drivers, etc.) and installation of virtualization tooling applicable to the target platform.
 
 ![Integrated Post Migration Automation](./integrated_post_migration_automation.png)
 <center>**Integrated Automation**</center>
-
-#### Key Benefits
-
-The following are key benefits of the operating system modernization feature:
-
-* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
 
 ### Migration Extensions (Custom Automation)
 
@@ -39,22 +24,15 @@ Automate post migration tasks such as agent removal or installation using the in
 ![Migration Extension](./migration_extension.png)
 <center>**Migration Extension**</center>
 
-#### Key Benefits
-
-The following are key benefits of the operating system modernization feature:
-
-* **Reduced Cloud Costs:** The clone based methodology reduces the risk associated with in-place upgrades that rely on snapshots and commonly require an extended period of downtime simply for testing the upgrade.
-
-
 ## Migration Sources
-The RiverMeadow platform migrating workloads from effectively any source including physical servers, virtual machines, and public cloud instances.
+The RiverMeadow platform supports migrating workloads from effectively any source including physical servers, virtual machines, and public cloud instances.
 
 ### Supported Operating Systems
 
 The RiverMeadow platform supports the most common versions of Windows and Linux running on x86 or ARM platforms.
 
 :::info
-The operating system must be supported on the target hypervisor or cloud.
+The platform supports additional operating systems beyond those listed below when the source platform is VMware vSphere.
 :::
 
 <details>

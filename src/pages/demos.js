@@ -8,13 +8,15 @@ import VMEMigration from '/img/demo_vme_migration.png';
 import OpenShiftMigration from '/img/demo_openshift_migration.png';
 import HyperVMigration from '/img/demo_hyperv_migration.png';
 import GoogleCloudMigration from '/img/google_cloud_migration.jpg';
+import GCEMigration from '/img/demo_gcp_migration.png';
+import VMEWindowsModernization from '/img/demo_vme_windows_modernization.png';
+import AzureWindowsModernization from '/img/demo_azure_windows_modernization.png';
 import Select from 'react-select'
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 import React, { useState } from "react";
 import Tooltip from '../components/Tooltip';
-
 const options = [
   { value: 'mobility', label: 'Mobility' },
   { value: 'optimization', label: 'Optimization' },
@@ -23,7 +25,7 @@ const options = [
 
 const technologies = [
     { value: 'aws', label: 'Amazon Web Services (AWS)' },
- //   { value: 'azure', label: 'Microsoft Azure' },
+    { value: 'azure', label: 'Microsoft Azure' },
     { value: 'gcp', label: 'Google Cloud Platform (GCP)' },
     { value: 'hyperv', label: 'Microsoft Hyper-V' },
  //   { value: 'nutanix', label: 'Nutanix AHV' },
@@ -40,7 +42,7 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           RiverMeadow Product Demos
         </Heading>
-        <p className="hero__subtitle">Take a Guided Tour of the RiverMeadow Workload Mobility Platform — Explore key product capabilities with an interactive, point-and-click experience.</p>
+        <p className="hero__subtitle">View video demos or take guided tours of the RiverMeadow Workload Mobility Platform — Explore key product capabilities.</p>
 </div>
     </header>
   );
@@ -63,20 +65,15 @@ const demos = [
         demoType: 'interactive',
         categories: ['aws', "mobility","interactive"],
     },
-/*    {
-        title: 'Cloud migrations to Microsoft Azure',
-        description: 'Experience a guided demo of migrating workloads to Microsoft Azure using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
-        image: 'https://www.techzine.eu/wp-content/uploads/2020/06/nutanix-prism.png',
-        categories: ['azure', "mobility","interactive"],
-  },
-  {
-    title: 'Cloud migrations to Google Cloud Platform',
-    description: 'Experience a guided demo of migrating workloads to Google Cloud Platform (GCP) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
-    image: 'https://www.techzine.eu/wp-content/uploads/2020/06/nutanix-prism.png',
-    type: 'interactive',
-    categories: ['gcp', "mobility","interactive"],
-  },
-*/
+   
+//   {
+//         title: 'Cloud migrations to Microsoft Azure',
+//         description: 'Experience a guided demo of migrating workloads to Microsoft Azure using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
+//         image: AWSMigration,
+//         iframeSrc: 'https://rivermeadow.storylane.io/demo/2hsmo1gf63dz?embed=popup',
+//         demoType: 'interactive',
+//         categories: ['azure', "mobility","interactive"],
+//   },
   {
     title: 'VM migration to HPE Morpheus VM Essentials',
     description: 'Experience a guided demo of migrating servers to HPE Morpheus VM Essentials using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
@@ -110,6 +107,14 @@ const demos = [
     demoType: 'interactive',
     categories: ['openshift', "mobility","interactive"],
   },
+  {
+    title: 'VM migration to Google Cloud Engine (GCE)',
+    description: 'Experience a guided demo of migrating servers to Google Cloud Engine (GCE) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+    image: GCEMigration,
+    iframeSrc: 'https://rivermeadow.storylane.io/demo/zj9pav67t252?embed=popup',
+    demoType: 'interactive',
+    categories: ['gcp', "mobility","interactive"],
+  },
     {
         title: 'Google Cloud migration with OS upgrade',
         description: 'Watch a video demo of migrating servers to Google Cloud with an OS upgrade using the RiverMeadow platform.',
@@ -117,11 +122,24 @@ const demos = [
         iframeSrc: '',
         videoLink: "https://player.vimeo.com/video/1169049532?title=0&amp;byline=0&amp;portrait=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
         demoType: 'video',
-        categories: ['gcp', "mobility","video"],
+        categories: ['gcp', "modernization","video"],
     }, 
-
-
-
+    {
+        title: 'HPE Morpheus VM Essentials Windows Modernization',
+        description: 'Experience a guided demo of migrating servers from VMware to HPE Morpheus VM Essentials with Windows OS upgrade using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: VMEWindowsModernization,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/kyfmbr1kj4ml?embed=popup',
+        demoType: 'interactive',
+        categories: ['vme', "modernization","interactive"],
+    }, 
+    {
+        title: 'Microsoft Azure Windows Modernization',
+        description: 'Experience a guided demo of migrating servers from VMware to Microsoft Azure with Windows OS upgrade using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: AzureWindowsModernization,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/liicn2y9ufuc?embed=popup',
+        demoType: 'interactive',
+        categories: ['azure', "modernization","interactive"],
+    }, 
 
 //  {
 //    title: 'RHEL OS conversion to Amazon Linux',
@@ -309,7 +327,13 @@ export default function Home() {
         setFilter(true);
         // Change filtering to match ANY selected value, not ALL
         const filtered = demos.filter(demo =>
-            demo.categories.some(category => selectedValues.includes(category))
+            //demo.categories.every(category => selectedValues.includes(category))
+            // selectedValues.some(val =>
+            //     ['mobility', 'optimization', 'modernization'].includes(val)
+            //         ? demo.categories.includes(val)
+            //         : technologies.some(tech => tech.value === val && demo.categories.includes(val))
+            // )
+          demo.categories.some(category => selectedValues.includes(category))
         );
         setFilteredDemos(filtered);
     } else {
@@ -330,10 +354,10 @@ export default function Home() {
             <div>
               <div className="demoFiltersGroup">
                 <div className="demoFilters">
-                    {/* <div className="demoFilterItem">
+                     {/* <div className="demoFilterItem">
                         <div className="demoFilterItemTitle">Capability</div>
                          <Select id="capability-select" className="basic-multi-select" classNamePrefix="select" isMulti options={options} onChange={handleFilterChange} />
-                    </div> */}
+                    </div>  */}
                     <div className="demoFilterItem">
                         <div className="demoFilterItemTitle">Technology</div>
                          <Select id="technology-select" className="basic-multi-select" classNamePrefix="select" isMulti options={technologies} onChange={handleFilterChange} />

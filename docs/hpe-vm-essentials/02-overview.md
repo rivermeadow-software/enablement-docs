@@ -7,5 +7,9 @@ The RiverMeadow platform is a workload mobility solution that enables organizati
 ## Migration Targets
 The RiverMeadow platform enables the migration of physical, virtual or cloud workloads to the following HPE Morpheus VM Esssentials solutions:
 
-* HPE Morpheus VM Essentials Software
-* HPE Morpheus Enterprise Software
+* Migrate VMs running on VMware vSphere to an HVM cluster managed with HPE Morpheus VM Essentials.
+* Migrate VMs running on VMware vSphere to an HVM cluster managed with HPE Morpheus VM Enterprise.
+* Migrate physical servers running Windows or Linux to an HVM cluster managed with HPE Morpheus VM Essentials.
+* Migrate physical servers running Windows or Linux to an HVM cluster managed with HPE Morpheus Enterprise.
+* Migrate VMs running on Microsoft Hyper-V to an HVM cluster managed with HPE Morpheus VM Essentials.
+* Migrate VMs running on Microsoft Hyper-V to an HVM cluster managed with HPE Morpheus VM Enterprise.

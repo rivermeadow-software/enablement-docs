@@ -1,0 +1,18 @@
+---
+#id: doc-markdown
+title: Source Server
+hide_title: false
+hide_table_of_contents: false
+sidebar_label: Source Server
+sidebar_position: 4
+description: Troubleshooting a source server
+
+---
+# Source Server Troubleshooting
+
+The RiverMeadow migration appliance is an essential control plane component that is responsible for orchestrating the migration process. This guide covers details on troubleshooting the source server.
+
+
+## Local Network Connectivity
+
+This section of the guide details troubleshooting steps to verify that the migration appliance has local network connectivity.

@@ -39,9 +39,9 @@ This section of the guide details troubleshooting steps to verify that the migra
 
 **Can the migration appliance resolve the hostname associated with the target REST API?**
 
-The RiverMeadow platform supports migrating workloads to virtualization platforms (vSphere, HPE Morpheus VM Essentials, Nutanix, Hyper-V, and OpenStack) where the migration appliance interacts with the platform's REST API to orchestrate the migration process. In scenarios where a hostname or FQDN is utilized in the configuration for the REST API, the ability for the migration to properly resolve that name may be required. The migration appliance includes network troubleshooting tools that can be used to verify DNS resolution. The tools can be accessed from the appliance TUI (Text User Interface) using the VM or instance console that can be reached from the cloud console or virtualization platform management server.
+The RiverMeadow platform supports migrating workloads to virtualization platforms (vSphere, HPE Morpheus VM Essentials, Nutanix, Hyper-V, and OpenStack) where the migration appliance interacts with the virtualization platform's REST API to orchestrate the migration process. In scenarios where a hostname or FQDN is utilized in the configuration for the REST API, the migration appliance must be able to resolve the hostname. The migration appliance includes network troubleshooting tools that can be used to verify DNS resolution. The tools can be accessed from the appliance TUI (Text User Interface) using the VM or instance console that can be reached from the cloud console or virtualization platform management server.
 
-The following screenshot shows an example of failed name resolution in which the appliance is unable to resolve the hostname provided for the ping operation.
+The following screenshot shows an example of failed name resolution in which the appliance is unable to resolve the hostname provided for the ping operation. Successful name resolution should result in either successful ping responses or a timeout due to network reachability but not name resolution.
 
 ![](./migration_dns_resolution_failure.png)
 
@@ -58,17 +58,18 @@ This section of the guide details troubleshooting steps to verify that the migra
 
 ### VMware vSphere
 
-The configuration data for the RiverMeadow migration appliance when deployed to VMware vSphere is applied via OVF properties. This allows the migration to read the configuration data during the initial appliance bootstrap process as well as after appliance reboots.
+The configuration data for the RiverMeadow migration appliance when deployed to VMware vSphere is applied via OVF properties. This allows the migration appliance to read the configuration data during the initial appliance bootstrap process as well as after appliance reboots.
+
+![](./vmware_appliance_configuration_data.png)
+
 
 ### HPE Morpheus VM Essentials
 
 The configuration data for the RiverMeadow migration appliance for HPE Morpheus VM Essentials is applied via the user data associated with the virtual image. This allows the migration to read the configuration data during the initial appliance bootstrap process.
 
-**Configuration Updates**
-
-1. Update the virtual image with the desired changes (i.e. - user account, manager appliance hostname or IP address)
-2. Delete the existing instance deployed from the virtual image.
-3. Provision a new instance from the updated virtual image.
+:::warning
+Updates to the migration appliance configuration require a redeployment of the migration appliance and any associated source worker appliances.
+:::
 
 ### Microsoft Hyper-V
 

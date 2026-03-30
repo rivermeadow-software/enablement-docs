@@ -6,13 +6,14 @@ The migration profile defines the plan or configuration for migrating a workload
 
 | Name | Description |
 |------|-------------|
-| **Cloud**| The target AWS region for the migrated server |
-| **Instance Type** | The AWS instance type used for the EC2 instance the source server is migrated to |
-| **Tenancy** | The AWS tenancy to assign to the target EC2 instance |
-| **Instance Tags** | The instance tags to associate with the target EC2 instance |
-| **Volume Type** | The volume type used for the target EC2 instance |
-| **VPC** | The VPC where the target EC2 instance will be deployed |
-| **Subnet** | The Subnet that the ENI(s) attached to the target EC2 instance will be associated with  |
+| **Group**| The VM Essentials group where the migrated server will be created. |
+| **Cloud**| The VM Essentials cloud where the migrated server will be created. |
+| **Cluster**| The VM Essentials cluster where the migrated server will be created. |
+| **Host (Optional)**| The VM Essentials cluster host where the migrated server will be created. |
+| **Datastore**| The VM Essentials cluster datastore where the migrated server disk(s) will be created. |
+| **Layout**| The VM Essentials layout the migrated server will be created with. |
+| **Resource Pool**| The VM Essentials resource pool where the migrated server will be created. |
+| **Plan**| The VM Essentials instance plan the migrated server will be created with. |
 
 ### Optimization
 
@@ -31,7 +32,6 @@ Workloads being migrated using the OS based migration methodology can also be op
 |------|-------------|
 | **OS Modernization**| The operating system version to upgrade the target system to during the migration or the Linux distribution to convert the target system to during the migration |
 | **SQL Modernization (Windows Only)** | The Microsoft SQL Server version to upgrade the SQL Server to during the workload migration  |
-
 
 ### Security Settings
 

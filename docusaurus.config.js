@@ -35,7 +35,7 @@ const docs = [
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'RiverMeadow Learning Hub',
-  tagline: 'Start your learning journey learning on how to migrate, optimize, and modernize workloads using the RiverMeadow Workload Mobility Platform.',
+  tagline: 'Start your learning journey on how to migrate, optimize, and modernize workloads using the RiverMeadow Workload Mobility Platform.',
   favicon: 'img/favicon.png',
   staticDirectories: ['static'],
 
@@ -93,6 +93,15 @@ const config = {
         path: 'guides',
         routeBasePath: 'guides',
         sidebarPath: './sidebarsGuides.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'workshops',
+        path: 'workshops',
+        routeBasePath: 'workshops',
+        sidebarPath: './sidebarsWorkshops.js',
       },
     ],
   ],

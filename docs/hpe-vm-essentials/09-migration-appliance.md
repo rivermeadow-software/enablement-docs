@@ -11,6 +11,8 @@ The virtual appliance requires the following hardware:
 * **Memory:** 16 GB
 * **Disk Space:** 32 GB
 
+## Configuration
+
 ## Virtual Image
 
 **Cypher Secret**

@@ -457,3 +457,9 @@ strong {
   border: none;
   display: block;
 }
+
+
+thead {
+  background-color: #0A76FD !important;
+  color: white !important;
+}

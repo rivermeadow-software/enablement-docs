@@ -71,6 +71,18 @@ The configuration data for the RiverMeadow migration appliance for HPE Morpheus 
 Updates to the migration appliance configuration require a redeployment of the migration appliance and any associated source worker appliances.
 :::
 
+**Invalid RiverMeadow Token**
+
+The migration appliance utilizes a unique token to authenticate to the RiverMeadow platform during the boot process. The token is associated with the RiverMeadow cloud account and if the token does not match then the appliance readiness associated with the cloud account/migration appliance will never reach a ready status.
+
+**Invalid HPE Morpheus VM Essentials URL**
+
+The migration appliance interacts with the HPE Morpheus VM Essentials manager REST API to orchestrate the migration process. If the URL for the manager is invalid the migration appliance will not be able to reach manager REST API.
+
+**Invalid User Credentials**
+
+The migration appliance interacts with the HPE Morpheus VM Essentials manager REST API to orchestrate the migration process. If the username or password for the service account used to interact with the REST API is invalid then an error message will be thrown in the RiverMeadow portal on the cloud account/migration appliance.
+
 ### Microsoft Hyper-V
 
 The configuration data for the RiverMeadow migration appliance for Microsoft Hyper-V is applied via the Hyper-V Data Exchange service (KVP). This allows the migration to read the configuration data during the appliance boot process.

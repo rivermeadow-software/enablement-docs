@@ -21,9 +21,9 @@ const defaultSettings = {
 
 const docs = [
   {
-    id: 'hpe-vm-essentials',
-    path: 'docs/hpe-vm-essentials',
-    routeBasePath: '/hpe-vm-essentials',
+    id: 'hpe-morpheus-vm-essentials',
+    path: 'docs/hpe-morpheus-vm-essentials',
+    routeBasePath: '/hpe-morpheus-vm-essentials',
     versions: {
       current: {
         label: '1.x.x',
@@ -159,12 +159,13 @@ const config = {
                 label: 'Red Hat OpenShift',
                 to: '/courses/red-hat-openshift/introduction',
               },
+
               {
                 label: 'HPE Morpheus VM Essentials',
-                to: '/courses/hpe-vm-essentials/introduction',
+                to: '/courses/hpe-morpheus-vm-essentials/introduction',
               },
 */
-            ],
+              ],
           },
           {
             label: 'Guides',

@@ -15,3 +15,6 @@ The RiverMeadow platform supports the migration of workloads using OS and VM bas
 | **SQL Modernization** | Automated Microsoft SQL Server upgrades during the workload migration | No | Yes |
 | **OS Hardening** | Harden Windows Server and RHEL systems using CIS Benchmarks | No | Yes |
 | **OS Conversion** | Convert between Linux distributions that are derivaties of the same base operating system  |  No | Yes |
+
+
+Pros and Cons

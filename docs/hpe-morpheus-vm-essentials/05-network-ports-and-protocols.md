@@ -1,8 +1,35 @@
 # Network Ports and Protocols
+---
 
-Network communication between the RiverMeadow solution components is critical to enable successful migrations to HPE Morpheus VM Essentials. This section of the courses details the network ports and protocols required for the different migration methods (VM based and OS based) available with the platform.
+Network communication between the RiverMeadow solution components is critical to enable successful migrations to HPE Morpheus VM Essentials. This section of the course details the network ports and protocols required for the different migration methods (VM based and OS based) available in the RiverMeadow platform.
 
-### OS Based Migration Ports and Protocols
+## Platform Access
+
+The hosted RiverMeadow portal acts as the user interface for managing migrations to HPE Morpheus VM Essentials. The migration appliance is deployed to the HVM cluster in the target HPE Morpheus VM Essentials environment. The migration appliance initiates outbound communication to the RiverMeadow platform over 443/TCP to establish a bi-directional communication channel. This enables commands to be relayed to the migration appliance without the need to open inbound firewall ports in order to allow the RiverMeadow platform to reach the source or target environments.
+
+### External IP Addresses
+
+The hosted RiverMeadow platform utilizes the following IP addresses. The migration appliance must be able to reach them to establish the bi-directional communication channel for the control plane.
+
+* 52.9.247.1
+* 52.9.142.11
+* 18.218.114.29
+* 3.143.57.56
+
+### DNS Domains
+
+The migration appliance 
+
+| Domain Name | Description |
+|--|--|
+| | |
+
+rm-files.rivermeadow.com
+mq-sns.rivermeadow.com
+mq-sqs.rivermeadow.com
+['mq-sns.rivermeadow.com', 'mq-sqs.rivermeadow.com', 'rm-files.rivermeadow.com', 'rm-logs.rivermeadow.com']
+
+## OS Based Migration Ports and Protocols
 
 ![](./vme_os_based_ports.png)
 
@@ -21,8 +48,7 @@ The following table details the network ports and protocols that must be opened 
 | RiverMeadow Target Worker | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration (api access) |
 | RiverMeadow Target Worker | Source Server | 5994 | TCP | Data replication from the source server to target instance |
 
-
-### VM Based Migration Ports and Protocols
+## VM Based Migration Ports and Protocols
 
 ![](./vme_vm_based_ports.png)
 

@@ -216,7 +216,7 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
                     <img src={demoImage} alt={demoTitle} style={{ objectFit: 'stretch',borderTopRightRadius: '6px', borderTopLeftRadius: '6px' }} />
                 </div>
                 <div className="workshop-card-content" style={{ padding: '16px' }}>
-                    <div className="workshop-card-logo">
+                    <div className="demo-card-logo">
                         <h3>{demoTitle}</h3>
                     </div>
                     <div className="workshop-card-description">
@@ -359,7 +359,7 @@ export default function Home() {
                          <Select id="capability-select" className="basic-multi-select" classNamePrefix="select" isMulti options={options} onChange={handleFilterChange} />
                     </div>  */}
                     <div className="demoFilterItem">
-                        <div className="demoFilterItemTitle">Technology</div>
+                        <div className="demoFilterItemTitle">Filter By Technology</div>
                          <Select id="technology-select" className="basic-multi-select" classNamePrefix="select" isMulti options={technologies} onChange={handleFilterChange} />
                     </div>
                 </div>

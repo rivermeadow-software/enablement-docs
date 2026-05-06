@@ -182,8 +182,8 @@ export default function Home() {
               </div>
               <ul className="demos-grid-list">
                 <li>
-                  <div className="workshop-card-disabled" style={{ padding: '0px'}}>
-                    {/* <a aria-label="Get Started" className="card-link-anchor" href="/courses/hpe-morpheus-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a> */}
+                  <div className="workshop-card" style={{ padding: '0px'}}>
+                     <a aria-label="Get Started" className="card-link-anchor" href="/courses/hpe-morpheus-vm-essentials/introduction"><span aria-hidden="true">&nbsp;</span></a>
                 <div className="workshop-card-image" style={{ borderTopRightRadius: '6px', borderTopLeftRadius: '6px'}}>
                     <img src={RiverMeadowVME} alt="HPE Morhpeus VM Essentials" style={{ objectFit: 'stretch',borderTopRightRadius: '6px', borderTopLeftRadius: '6px' }} />
                 </div>
@@ -194,12 +194,9 @@ export default function Home() {
                       <div className="workshop-card-description">
                         <span className="workshop-card-text">Learn about the RiverMeadow platform and the platform's migration, optimization, and modernization features.</span>
                       </div>
-                        <div>
-                         <span className="coming-soon-badge">Coming Soon</span>
-                      </div>
                     <button
                         className="button button--primary"
-                        style={{ marginTop: 16, width: '100%', backgroundColor: 'lightgray', borderColor: 'lightgray' }}
+                        style={{ marginTop: 16, width: '100%', backgroundColor: '#0A76FD', borderColor: '#0A76FD' }}
                     >Launch Course
                     </button>
                     </div>

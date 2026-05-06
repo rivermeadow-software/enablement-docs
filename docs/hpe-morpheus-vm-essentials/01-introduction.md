@@ -1,4 +1,4 @@
-# Introduction (DONE)
+# Introduction
 ---
 This course provides a technical deep dive on the RiverMeadow platform's integration with HPE Morpheus VM Essentials. You will learn how to migrate workloads from any source to the HVM hypervisor available in HPE Morpheus VM Essentials.
 

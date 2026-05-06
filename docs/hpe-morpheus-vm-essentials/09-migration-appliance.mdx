@@ -1,28 +1,27 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 # Migration Appliance
 ---
 
-The RiverMeadow migration appliance is a virtual appliance packaged as a QCOW2 image file that is downloaded via the RiverMeadow platform and deployed on an HVM cluster in the target environment. The appliance runs a hardened version of Oracle Enterprise Linux (OEL) 9.
+The RiverMeadow migration appliance is a virtual appliance (virtual machine) that is deployed to an HVM cluster. The appliance is responsible for local migration orchestration operations such as provisioning HVM instances via the Morpheus REST API. The migration appliance communicates with the RiverMeadow hosted platform using an outbound initiated connection over 443/TCP.
 
 ![](./hpe_vme_migration_appliance.png)
 
 ### Hardware Requirements
 
-The virtual appliance requires the following hardware:
+The virtual appliance requires the following hardware configuration:
 
 * **CPU:** 2 Cores
 * **Memory:** 16 GB
 * **Disk Space:** 32 GB
 
 ### Appliance Download
-The migration appliance is downloaded from the RiverMeadow platform (migrate.rivermeadow.com) and is bundled in a ZIP file that contains the QCOW2 image used to deploy the migration appliance.
+The migration appliance is a virtual appliance packaged as a QCOW2 image file that is downloaded from the RiverMeadow web portal and deployed to an HVM cluster in the target environment. 
 
-## Configuration
+## Appliance Configuration
 
-The configuration settings for the RiverMeadow migration appliance are defined using a YAML file that is attached to the virtual image used to deploy the migration appliance instance.
+The configuration settings for the RiverMeadow migration appliance are defined using a YAML file that is associated with the migration appliance during instance deployment. The configuration data is defined in the cloud-init user data associated with the HPE Morpheus VM Essentials virtual image used to deploy the migration appliance instance.
 
 ### Secure Credential Handling (Cypher Secret)
 
@@ -30,9 +29,11 @@ The credentials for interacting with the Morpheus REST API enable privileged acc
 
 ![](./hpe_vme_create_cypher_secret.png)
 
+The secret is referenced within the cloud-init user data using the cypher format `<%=cypher.read('secret/rivermeadowsa')%>`. Additional details can be found in the HPE documentation (https://support.hpe.com/hpesc/public/docDisplay?docId=sd00006453en_us&page=GUID-25C0F475-27A2-4C0A-BF2B-76EE20F51F7A.html&docLocale=en_US).
+
 ### Configuration Settings
 
-The general configuration settings
+The general configuration settings for the migration appliance that apply to os based and vm based migrations.
 
 | Name | Details |
 |:------:|---------|
@@ -43,7 +44,7 @@ The general configuration settings
 
 ### Example Config
 
-The following is an example configuration file for configuring the migration appliance to enable VM based migrations and automate the deployment of the source worker appliance.
+The following is an abbreviated example configuration file for configuring the migration appliance.
 
 ```yaml
 #cloud-config
@@ -68,9 +69,7 @@ token: eJzDwoaXDIq1r8gOlajyn2SqrMsTiPCq...
 
 ## Virtual Image
 
-The migration appliance is deployed from a virtual image within the HPE Morpheus VM Essentials deployment. The virtual image 
-
-[VME Documentation](https://docs.rivermeadow.com/hpe-vme-standalone-launch-mig)
+The migration appliance is deployed from a virtual image within the HPE Morpheus VM Essentials deployment. The virtual image is created from the QCOW2 image downloaded from the RiverMeadow platform. Additional details on the specific virtual image settings can be found in the RiverMeadow [HPE Morpheus VM Essentials documentation](https://docs.rivermeadow.com/hpe-vme-standalone-launch-mig).
 
 ![](./hpe_vme_virtual_image.png)
 
@@ -89,7 +88,7 @@ The RiverMeadow migration appliance can be assigned a dynamic IP address during 
 
 The RiverMeadow migration appliance can be assigned a static IP address during instance provisioning by explicitly assigning an IP address to the network interface. The IP address is populated in the text box next to the network drop-down in the HPE Morpheus VM Essentials web interface.
 
-![](./hpe_vme_static_ip_address_config.png)
+![](./hpe_vme_migration_appliance_static_ip.png)
 
 :::warning
 The subnet mask, default gateway, and DNS servers must be assigned to the network that the migration appliance is being deployed.
@@ -98,29 +97,30 @@ The subnet mask, default gateway, and DNS servers must be assigned to the networ
   </TabItem>
   <TabItem value="native-pool" label="Native IP Pool">
 HPE Morpheus VM Essentials supports managing IP addresses using native IP pools that allow administrators to define a range of IP addresses that will be allocated to instances during the provisioning process. Selecting the VM Essentials network with an associated IP pool is the only configuration required during the instance provisioning process.
+:::warning
+The subnet mask, default gateway, and DNS servers must be assigned to the network that the migration appliance is being deployed.
+:::
 
 ![](./hpe_vme_ip_pool.png)
+
+
+  </TabItem>
+
+  <TabItem value="3rd-party-ipam" label="3rd Party IPAM">
+
+HPE Morpheus VM Essentials supports integrating with 3rd party IPAM solutions such as BlueCat, InfoBlox, PHPIpam and others to automate the management of IP addresses for provisioned instances.
 
 :::warning
 The subnet mask, default gateway, and DNS servers must be assigned to the network that the migration appliance is being deployed.
 :::
   </TabItem>
 
-  <TabItem value="3rd-party-ipam" label="3rd Party IPAM">
-
-HPE Morpheus VM Essentials supports integrating with 3rd party IPAM solutions such as BlueCat, InfoBlox, PHPIpam and others to automate the management of IP addresses for provisionined instances.
-  </TabItem>
-
 </Tabs>
 
-## Multiple HVM Clusters
-A single VM Essentials manager can support managing multiple clusters (i.e. - dev, prod, etc.). The RiverMeadow platform supports migrations to HPE Morpheus VM Essentials environments running multiple HVM clusers. Only a single RiverMeadow migration appliance is required if multiple HVM clusters are added to a single VM Essentials manager.
+## Multiple Migration Appliance Use Cases
+A single RiverMeadow migration appliance supports the majority of common use cases of server migrations to HPE Morpheus VM Essentials. There are scenarios where additional migration appliances would need to be deployed to meet the specific requirements.
 
-## Multiple Migration Appliances
-The RiverMeadow migration appliance supports the majority of use cases with a single migration appliance
-
-### Multiple VM Essentials Managers
-The RiverMeadow migration appliance is tied in a 1:1 fashion with a VM Essentials manager. The mapping is due to the identity integration
-
-### Role Based Access Control
+* **Multiple VM Essentials Managers:** In an environment where there are multipled HPE Morpheus VM Essentials manager appliances that are deployed, there would need to be multiple RiverMeadow migration appliance deployed. The RiverMeadow migration appliance is tied in a 1:1 manner with an HPE Morpheus VM Essentials manager as only one HPE Morpheus can be integrated with a migration appliance.
+* **Granular Role Based Access Control:** The RiverMeadow platform supports granular access control through the use of organizations and projects. These constructs support isolating user access but a RiverMeadow migration appliance can only be tied to a single project within the RiverMeadow platform. This means that if user access is segregated through the use of a project then a migration appliance will need to be deployed for each project that needs to integrate with the HPE Morpheus VM Essentials manager.
 The RiverMeadow migration appliance is tied in a 1:1 fashion with a RiverMeadow project. This necessitates the need to deploy multiple migration appliances if there is a need to support multiple projects within a RiverMeadow organization.
+* **VM Based Migration Scaling:** The RiverMeadow platform supports VM based migrations to HPE Morpheus VM Essentials. VM based migrations utilize a source worker appliance that is deployed to the source VMware vSphere environment. In situations where large scale concurrent VM migrations need to be performed there will likely be a need for multiple source worker appliances to be deployed to achieve that level of concurrency. The migration appliance and source worker appliance for HPE Morpheus VM Essentials migrations are tied in a 1:1 manner which requires that a migration appliance is deployed for each source worker appliance.

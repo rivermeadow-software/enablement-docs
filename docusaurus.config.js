@@ -159,12 +159,11 @@ const config = {
                 label: 'Red Hat OpenShift',
                 to: '/courses/red-hat-openshift/introduction',
               },
-
+*/
               {
                 label: 'HPE Morpheus VM Essentials',
                 to: '/courses/hpe-morpheus-vm-essentials/introduction',
               },
-*/
               ],
           },
           {

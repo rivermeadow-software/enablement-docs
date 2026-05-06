@@ -1,4 +1,4 @@
-# Summary (DONE)
+# Summary
 ---
 In this course you learned about how to use the RiverMeadow platform to migrate, optimize, and modernize workloads from any source to HPE Morpheus VM Essentials.
 

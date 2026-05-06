@@ -1,5 +1,6 @@
-# Source Worker Appliance (DONE)
+# Source Worker Appliance
 ---
+
 The source worker appliance is an optional component that is deployed for VM based migrations from VMware vSphere source environments. The appliance is deployed to the source VMware vSphere environment from the RiverMeadow migration appliance that is deployed to the target HPE Morpheus VM Esssentials environment.
 
 ![](/img/rivermeadow_source_worker_appliance.png)
@@ -16,7 +17,7 @@ The virtual appliance requires the following hardware:
 The following settings are required when enabling VM based migrations to HPE Morpheus VM Essentials and are defined in the customization script during the creation of the virtual image for the RiverMeadow migration appliance.
 
 | Name | Details |
-|:------|------------------|
+|:------:|:------------------:|
 | **enable_vm_based_migrations** | Whether to enable VM based migations |
 | **vsphere.environment.url** | The URL of the source VMware vCenter server |
 | **vsphere.environment.username** | The username of the user account used to authenticate to the source VMware vCenter server | 

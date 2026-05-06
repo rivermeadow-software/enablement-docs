@@ -1,4 +1,4 @@
-# Delta Migrations (DONE)
+# Delta Migrations
 ---
 Delta or incremental migrations are used to sync data changes between the source and target workloads after the intial migration. Delta migrations are commonly performed multiple days leading up to the cutover event to mimize the delta between the source server and target instance.
 

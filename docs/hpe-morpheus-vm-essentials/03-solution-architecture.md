@@ -1,7 +1,8 @@
 # Solution Architecture
 ---
 
-**Swap Architecture Image**
+![](./solution_architecture.png)
+
 <center>**RiverMeadow Platform Architecture**</center>
 
 ## Solution Components

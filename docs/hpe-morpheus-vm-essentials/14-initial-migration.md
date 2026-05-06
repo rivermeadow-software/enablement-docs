@@ -1,4 +1,4 @@
-# Initial Migration (DONE)
+# Initial Migration
 ---
 The initial migration of a server creates a new instance in HPE Morpheus VM Essentials and replicates the data from the source server. Once the initial migration or sync completes then initial testing and validation of the instance can be performed as a "smoke" test to check basic functionality.
 

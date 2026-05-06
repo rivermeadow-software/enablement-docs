@@ -1,9 +1,10 @@
-# Deployment Workflow (DONE)
+# Deployment Workflow
 ---
+
 The following steps detail the workflow for deploying and configuring the RiverMeadow platform for HPE Morpheus VM Essentials server migrations:
 
 | Step | Action         | Details |
-|:------:|:------------:|---------|
+|:------:|:------------:|:---------:|
 | **1** | **HPE Morpheus VME Service Account Creation** | A dedicated user role and service account should be created to enable the migration appliance to interact with the HPE Morpheus VM Essentials REST API. |
 | **2** | **Source VMware Service Account Creation (Optional)** | A dedicated user role and service account should be created to enable the migration appliance and source worker appliance to interact with the source VMware vSphere REST API. This is only required if VM based migrations will be used to migrate to HPE Morpheus VM Essentials. |
 | **3** | **Migration Appliance Deployment** | The RiverMeadow migration appliance is deployed to the target HPE Morpheus VM Esssentials deployment to enable local migration orchestration and log collection. |

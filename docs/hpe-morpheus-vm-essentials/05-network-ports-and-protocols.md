@@ -9,7 +9,7 @@ The hosted RiverMeadow portal acts as the user interface for managing migrations
 
 ### External IP Addresses
 
-The hosted RiverMeadow platform utilizes the following IP addresses. The migration appliance must be able to reach them to establish the bi-directional communication channel for the control plane.
+The hosted RiverMeadow platform utilizes the following IP addresses. The migration appliance must be able to reach them to establish the bi-directional communication channel with the control plane.
 
 * 52.9.247.1
 * 52.9.142.11
@@ -18,16 +18,12 @@ The hosted RiverMeadow platform utilizes the following IP addresses. The migrati
 
 ### DNS Domains
 
-The migration appliance 
+The migration appliance must be able to resolve the following domain names to establish the bi-directional communication channel with the control plane.
 
-| Domain Name | Description |
-|--|--|
-| | |
-
-rm-files.rivermeadow.com
-mq-sns.rivermeadow.com
-mq-sqs.rivermeadow.com
-['mq-sns.rivermeadow.com', 'mq-sqs.rivermeadow.com', 'rm-files.rivermeadow.com', 'rm-logs.rivermeadow.com']
+* rm-files.rivermeadow.com
+* rm-logs.rivermeadow.com
+* mq-sns.rivermeadow.com
+* mq-sqs.rivermeadow.com
 
 ## OS Based Migration Ports and Protocols
 
@@ -36,7 +32,7 @@ mq-sqs.rivermeadow.com
 The following table details the network ports and protocols that must be opened to ensure proper network communication for OS based migrations.
 
 | Source | Target | Port | Protocol | Notes |
-|:--------:|:--------:|:-------:|:----------:|-------|
+|:--------:|:--------:|:-------:|:----------:|:-------:|
 | Admin Workstation | RiverMeadow Platform | 443 | TCP | UI and API access for administrator management activities |
 | RiverMeadow Migration Appliance | RiverMeadow Platform | 443 | TCP | Control plane communication for migration orchestration |
 | RiverMeadow Migration Appliance | HPE Morpheus VM Essentials Manager | 443 | TCP | API access to the VM Essentials Manager for migration automation |
@@ -55,7 +51,7 @@ The following table details the network ports and protocols that must be opened 
 The following table details the network ports and protocols that must be opened to ensure proper network communication for VM based migrations.
 
 | Source | Target | Port | Protocol | Notes |
-|:--------:|:--------:|:-------:|:----------:|-------|
+|:--------:|:--------:|:-------:|:----------:|:-------:|
 | Admin Workstation | RiverMeadow Platform | 443 | TCP | UI and API access for administrator management activities |
 | RiverMeadow Migration Appliance | RiverMeadow Platform | 443 | TCP | Control plane communication for migration orchestration |
 | RiverMeadow Migration Appliance | HPE Morpheus VM Essentials Manager | 443 | TCP | API access to the VM Essentials Manager for migration automation |

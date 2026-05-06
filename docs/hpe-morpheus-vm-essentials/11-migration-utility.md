@@ -1,5 +1,6 @@
-# Migration Utility Deployment (DONE)
+# Migration Utility Deployment
 ---
+
 The RiverMeadow migration utility is a lightweight utility (less than 30 MB) that is deployed to each Windows or Linux source server that is migrated using OS based migrations. The migration utility enables advanced optimization and modernization functionality during the workload migration.
 
 ## Automated Deployment

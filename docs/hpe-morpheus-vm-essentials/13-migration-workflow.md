@@ -1,9 +1,9 @@
-# Migration Workflow (DONE)
+# Migration Workflow
 ---
 The following steps detail the general migration workflow for migrating servers using the RiverMeadow platform.
 
 | Step | Action | Details |
-|:---------:|:--------:|---------|
+|:---------:|:--------:|:---------:|
 | 1 | **Initial Migration** | An initial migration profile is created to define how the source server(s) will be migrated and what additional RiverMeadow features will be used during the migration. The initial migration creates a new instance in HPE Morpheus VM Essentials that is network-isolated. The instance will be powered on by default and can be used to perform basic testing and validation. |
 | 2 | **Delta Migration(s)** | Once the initial data sync has been performed, incremental data syncs or delta migrations can be scheduled to replicate changes from the source server to the target instance running in HPE Morpheus VM Essentials. This reduces the downtime required to perform the final data sync during the cutover window. |
 | 3 | **User Acceptance Testing (UAT)** | Testing of the migrated server is performed prior to the final cutover to ensure that applications and services function as expected in the target HPE Morpheus VM Esssentials environment. Servers are placed into isolation at the network level (i.e. - migration network) to prevent any impact with the source environment. |

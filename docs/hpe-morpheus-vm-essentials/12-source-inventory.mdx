@@ -1,8 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
-# Adding Source Servers (DONE)
+# Adding Source Servers
 ---
 Once the RiverMeadow infrastructure components have been deployed to the source and target environments, the source servers that will be migrated need to be added to the source inventory in the RiverMeadow platform.
 
@@ -45,7 +44,7 @@ RiverMeadow tags are used only by the platform are not applied to the source or 
     The following table details the supported fields for a CSV upload:
 
     |Name|Description|Required|
-    |:----:|:-----------|:------:|
+    |:----:|:-----------:|:------:|
     |**host**    | The IP Address of the source server. This IP address must be reachable from the RiverMeadow migration appliance and the instance that will be created in HPE Morpheus VM Essentials. | Yes |
     |**username**    | The username of the user account used to automate the deployment of the RiverMeadow migration utility on the source server. | No |
     |**password**| The password of the user account used to automate the deployment of the RiverMeadow migration utility to the source server. | No |

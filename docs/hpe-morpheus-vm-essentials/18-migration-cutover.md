@@ -1,4 +1,4 @@
-# Migration Cutover (DONE)
+# Migration Cutover
 ---
 The RiverMeadow platform supports warm and cold migrations of servers from any source to HPE Morpheus VM Essentials. In addition to the process of creating the instance in VM Essentials and replicating the data, there are other steps that are commoly performed during the transition process from the source server to the "clone" or taget running HPE Morpheus VM Essentials.
 

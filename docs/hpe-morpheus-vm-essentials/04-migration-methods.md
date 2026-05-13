@@ -13,8 +13,6 @@ The OS based migration method utilizes a migration utility deployed to each sour
 
 The VM based migration method utilizes a hypervisor-level integration with the source VMware vSphere environment to lift and shift virtual machines from VMware to HPE Morpheus VM Essentials.
 
-* **Operating system agnostic:** Migrate servers from any source such as physical servers, virtual machines running on any hypervisors, and public cloud instances. ***The operating system must be supported by HPE Morpheus VM Essentials***
-
 ### Comparison Table
 
 The following table details the features that are supported by each migration method:
@@ -22,9 +20,9 @@ The following table details the features that are supported by each migration me
 | Feature | Description | VM Based | OS Based |
 |:---------:|:--:|:---:|:---------------------:|
 | **Supported Sources** | The environment of the source server being migrated to HPE Morpheus VM Essentials | VMware vSphere | Any (physical or virtual)|
-| **Supported Operating Systems** | The supported operating systems for the source server being migrated to HPE Morpheus VM Essentials | Any Operating System | Windows and Linux (x86 and ARM) |
-| **Retain source IP Address** | Retain the IP address of the source server during the migration | [^1]  | [^1] |
-| **Retain source MAC Address** | Retain the MAC address of the source server during the migration | [^2] | [^2] |
+| **Supported Operating Systems** | The supported operating systems for the source server being migrated to HPE Morpheus VM Essentials | Windows and Linux - [Supported OS Matrix](https://docs.rivermeadow.com/support-matrix) | Windows and Linux - [Supported OS Matrix](https://docs.rivermeadow.com/support-matrix)  |
+| **Retain Source IP Address** | Retain the IP address of the source server during the migration | [^1]  | [^1] |
+| **Retain Source MAC Address** | Retain the MAC address of the source server during the migration | Not Available [^2] | Not Available [^2] |
 | **Automated VMware Tools Removal** | The automated removal of VMware tools from the cloned instance during the migration process | &#10004; | &#10004; |
 | **Automated Virtio Driver Installation** | The automated installation of virtio drivers on the cloned instance during the migration process | &#10004; | &#10004; |
 | **Migration Extensions** | Execute custom post-migration automation scripts using Bash or PowerShell  | &#10004; | &#10004; |

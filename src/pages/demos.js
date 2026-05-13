@@ -11,6 +11,7 @@ import GoogleCloudMigration from '/img/google_cloud_migration.jpg';
 import GCEMigration from '/img/demo_gcp_migration.png';
 import VMEWindowsModernization from '/img/demo_vme_windows_modernization.png';
 import AzureWindowsModernization from '/img/demo_azure_windows_modernization.png';
+import NutanixMigration from '/img/demo_nutanix_migration.png';
 import Select from 'react-select'
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -28,7 +29,7 @@ const technologies = [
     { value: 'azure', label: 'Microsoft Azure' },
     { value: 'gcp', label: 'Google Cloud Platform (GCP)' },
     { value: 'hyperv', label: 'Microsoft Hyper-V' },
- //   { value: 'nutanix', label: 'Nutanix AHV' },
+    { value: 'nutanix', label: 'Nutanix AHV' },
     { value: 'openshift', label: 'Red Hat OpenShift' },
     { value: 'vme', label: 'HPE Morpheus VM Essentials' },
     { value: 'vmware', label: 'VMware vSphere' },
@@ -50,7 +51,7 @@ function HomepageHeader() {
 
 const demos = [   
     {
-        title: 'VM migration to VMware vSphere',
+        title: 'VM Migration to VMware vSphere',
         description: 'Experience a guided demo of migrating servers to VMware vSphere using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
         image: VMwareMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/esajh5kbgml7?embed=popup',
@@ -58,7 +59,7 @@ const demos = [
         categories: ['vmware', "mobility","interactive"],
     },
     {
-        title: 'VM migration to Amazon Web Services (AWS)',
+        title: 'VM Migration to Amazon Web Services (AWS)',
         description: 'Experience a guided demo of migrating servers to Amazon Web Services (AWS) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
         image: AWSMigration,
         iframeSrc: 'https://rivermeadow.storylane.io/demo/s7ci5jeropfx?embed=popup',
@@ -74,47 +75,46 @@ const demos = [
 //         demoType: 'interactive',
 //         categories: ['azure', "mobility","interactive"],
 //   },
-  {
-    title: 'VM migration to HPE Morpheus VM Essentials',
-    description: 'Experience a guided demo of migrating servers to HPE Morpheus VM Essentials using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
-    image: VMEMigration,
-    iframeSrc: 'https://rivermeadow.storylane.io/demo/tlywo8kgkklt?embed=popup',
-    demoType: 'interactive',
-    categories: ['vme', "mobility","interactive"],
-  },
-  {
-    title: 'VM migration to Microsoft Hyper-V',
-    description: 'Experience a guided demo of migrating servers to Microsoft Hyper-V using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
-    image: HyperVMigration,
-    iframeSrc: 'https://rivermeadow.storylane.io/demo/13gzntcd79dk?embed=popup',
-    demoType: 'interactive',
-    categories: ['hyperv', "mobility","interactive"],
-  },
-  /*
-  {
-    title: 'VM migrations to Nutanix AHV',
-    description: 'Experience a guided demo of migrating workloads to Nutanix AHV using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
-    image: NutanixMigration,
-    type: 'interactive',
-    categories: ['nutanix', "mobility","interactive"],
-  },
-  */
-  {
-    title: 'VM migration to Red Hat OpenShift',
-    description: 'Experience a guided demo of migrating servers to Red Hat OpenShift using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
-    image: OpenShiftMigration,
-    iframeSrc: 'https://rivermeadow.storylane.io/demo/2koimciug9s1?embed=popup',
-    demoType: 'interactive',
-    categories: ['openshift', "mobility","interactive"],
-  },
-  {
-    title: 'VM migration to Google Cloud Engine (GCE)',
-    description: 'Experience a guided demo of migrating servers to Google Cloud Engine (GCE) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
-    image: GCEMigration,
-    iframeSrc: 'https://rivermeadow.storylane.io/demo/zj9pav67t252?embed=popup',
-    demoType: 'interactive',
-    categories: ['gcp', "mobility","interactive"],
-  },
+    {
+        title: 'VM Migration to HPE Morpheus VM Essentials',
+        description: 'Experience a guided demo of migrating servers to HPE Morpheus VM Essentials using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: VMEMigration,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/tlywo8kgkklt?embed=popup',
+        demoType: 'interactive',
+        categories: ['vme', "mobility","interactive"],
+    },
+    {
+        title: 'VM Migration to Microsoft Hyper-V',
+        description: 'Experience a guided demo of migrating servers to Microsoft Hyper-V using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: HyperVMigration,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/13gzntcd79dk?embed=popup',
+        demoType: 'interactive',
+        categories: ['hyperv', "mobility","interactive"],
+    },
+    {
+        title: 'VM Migration to Nutanix AHV',
+        description: 'Experience a guided demo of migrating workloads to Nutanix AHV using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: NutanixMigration,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/srpuqzqes5sk?embed=popup',
+        demoType: 'interactive',
+        categories: ['nutanix', "mobility","interactive"],
+    },
+    {
+        title: 'VM Migration to Red Hat OpenShift',
+        description: 'Experience a guided demo of migrating servers to Red Hat OpenShift using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: OpenShiftMigration,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/2koimciug9s1?embed=popup',
+        demoType: 'interactive',
+        categories: ['openshift', "mobility","interactive"],
+    },
+    {
+        title: 'VM Migration to Google Cloud Engine (GCE)',
+        description: 'Experience a guided demo of migrating servers to Google Cloud Engine (GCE) using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient workload mobility.',
+        image: GCEMigration,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/zj9pav67t252?embed=popup',
+        demoType: 'interactive',
+        categories: ['gcp', "mobility","interactive"],
+    },
     {
         title: 'Google Cloud migration with OS upgrade',
         description: 'Watch a video demo of migrating servers to Google Cloud with an OS upgrade using the RiverMeadow platform.',
@@ -153,13 +153,10 @@ const demos = [
 ];
 
 function copyDemoLink(demoIframeSrc, videoLink, setShow) {
-
-
     if (demoIframeSrc) {
         const shareableLink = demoIframeSrc.replace('?embed=popup', '');
         if (navigator.clipboard) {
             navigator.clipboard.writeText(shareableLink).then(() => {
-            //  alert('Demo link copied to clipboard!');
             }, () => {
                 alert('Failed to copy demo link.');
             });
@@ -171,7 +168,6 @@ function copyDemoLink(demoIframeSrc, videoLink, setShow) {
             textarea.select();
             try {
                 document.execCommand('copy');
-            //  alert('Demo link copied to clipboard!');
             } catch (err) {
                 alert('Failed to copy demo link.');
             }
@@ -195,7 +191,6 @@ function copyDemoLink(demoIframeSrc, videoLink, setShow) {
             textarea.select();
             try {
                 document.execCommand('copy');
-            //  alert('Demo link copied to clipboard!');
             } catch (err) {
                 alert('Failed to copy demo link.');
             }

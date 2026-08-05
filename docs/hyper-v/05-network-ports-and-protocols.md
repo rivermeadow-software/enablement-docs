@@ -27,8 +27,6 @@ The migration appliance must be able to resolve the following domain names to es
 
 ## OS Based Migration Ports and Protocols
 
-![](./vme_os_based_ports.png)
-
 The following table details the network ports and protocols that must be opened to ensure proper network communication for OS based migrations.
 
 | Source | Target | Port | Protocol | Notes |
@@ -46,8 +44,6 @@ The following table details the network ports and protocols that must be opened 
 
 ## VM Based Migration Ports and Protocols
 
-![](./vme_vm_based_ports.png)
-
 The following table details the network ports and protocols that must be opened to ensure proper network communication for VM based migrations.
 
 | Source | Target | Port | Protocol | Notes |
@@ -56,11 +52,9 @@ The following table details the network ports and protocols that must be opened 
 | RiverMeadow Migration Appliance | RiverMeadow Platform | 443 | TCP | Control plane communication for migration orchestration |
 | RiverMeadow Migration Appliance | HPE Morpheus VM Essentials Manager | 443 | TCP | API access to the VM Essentials Manager for migration automation |
 | RiverMeadow Migration Appliance | Source VMware vCenter Server | 443 | TCP | API access to the source VMware vCenter Server |
-| RiverMeadow Migration Appliance  | RiverMeadow Source Worker Appliance | 5994 | TCP | Control plane communication for migration orchestration |
 | RiverMeadow Source Worker Appliance | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration |
-| RiverMeadow Source Worker Appliance | Source VMware vCenter | 443 | TCP | API access to the source VMware vCenter Server |
 | RiverMeadow Source Worker Appliance | VMware ESXi Hosts | 902 | TCP | ESXi host data transfer (NBDSSL) |
+| RiverMeadow Source Worker Appliance | Source VMware vCenter | 443 | TCP | API access to the source VMware vCenter Server |
 | RiverMeadow Target Worker | RiverMeadow Migration Appliance | 443 | TCP | Control plane communication for migration orchestration (message bus) |
 | RiverMeadow Target Worker | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration (api access) |
-| RiverMeadow Target Worker | RiverMeadow Migration Appliance | 8080 | TCP | Control plane communication for migration orchestration (api access) |
 | RiverMeadow Target Worker | RiverMeadow Source Worker Appliance | 5994 | TCP | Data replication from the source worker appliance to target instance |

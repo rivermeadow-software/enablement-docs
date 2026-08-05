@@ -21,8 +21,8 @@ The following table details the features that are supported by each migration me
 |:---------:|:--:|:---:|:---------------------:|
 | **Supported Sources** | The environment of the source server being migrated to HPE Morpheus VM Essentials | VMware vSphere | Any (physical or virtual)|
 | **Supported Operating Systems** | The supported operating systems for the source server being migrated to HPE Morpheus VM Essentials | Windows and Linux - [Supported OS Matrix](https://docs.rivermeadow.com/support-matrix) | Windows and Linux - [Supported OS Matrix](https://docs.rivermeadow.com/support-matrix)  |
-| **Cold Migrations** | Migrate the source server while the server is powered off | &#10004; |  |
-| **Warm Migrations** | Migrate the source server while the server is still powered on | &#10004; | &#10004; |
+| **Cold Migrations** | The automated removal of VMware tools from the cloned instance during the migration process | &#10004; | &#10004; |
+| **Warm Migrations** | The automated removal of VMware tools from the cloned instance during the migration process | &#10004; | &#10004; |
 | **Retain Source IP Address** | Retain the IP address of the source server during the migration | [^1]  | [^1] |
 | **Retain Source MAC Address** | Retain the MAC address of the source server during the migration | Not Available [^2] | Not Available [^2] |
 | **Automated VMware Tools Removal** | The automated removal of VMware tools from the cloned instance during the migration process | &#10004; | &#10004; |

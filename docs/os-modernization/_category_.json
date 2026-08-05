@@ -1,0 +1,9 @@
+{
+    "label": "OS Modernization",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "description": "Learn how to automate the upgrade of Windows and Linux operating systems during workload migration or in-place in an existing environment."
+    }
+  }
+  

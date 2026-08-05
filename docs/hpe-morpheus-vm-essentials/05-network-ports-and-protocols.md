@@ -60,7 +60,7 @@ The following table details the network ports and protocols that must be opened 
 | RiverMeadow Source Worker Appliance | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration |
 | RiverMeadow Source Worker Appliance | Source VMware vCenter | 443 | TCP | API access to the source VMware vCenter Server |
 | RiverMeadow Source Worker Appliance | VMware ESXi Hosts | 902 | TCP | ESXi host data transfer (NBDSSL) |
-| RiverMeadow Target Worker | RiverMeadow Migration Appliance | 443 | TCP | Control plane communication for migration orchestration (message bus) |
-| RiverMeadow Target Worker | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration (api access) |
-| RiverMeadow Target Worker | RiverMeadow Migration Appliance | 8080 | TCP | Control plane communication for migration orchestration (api access) |
-| RiverMeadow Target Worker | RiverMeadow Source Worker Appliance | 5994 | TCP | Data replication from the source worker appliance to target instance |
+| Target Server | RiverMeadow Migration Appliance | 443 | TCP | Control plane communication for migration orchestration (message bus) |
+| Target Server | RiverMeadow Migration Appliance | 8888 | TCP | Control plane communication for migration orchestration (api access) |
+| Target Server | RiverMeadow Migration Appliance | 8080 | TCP | Control plane communication for migration orchestration (api access) |
+| Target Server | RiverMeadow Source Worker Appliance | 5994 | TCP | Data replication from the source worker appliance to target instance |

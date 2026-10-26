@@ -1,0 +1,18 @@
+---
+title: Troubleshooting
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+
+# Troubleshooting
+
+Use the guided console below to work through the issue — it walks through a few questions
+and lands on a specific fix. If it doesn't resolve things, it escalates with the full session
+trace attached so you don't have to explain what you already tried.
+
+<BrowserOnly fallback={<div>Loading diagnostic console…</div>}>
+  {() => {
+    const Troubleshooter = require('@site/src/components/Troubleshooter').default;
+    return <Troubleshooter />;
+  }}
+</BrowserOnly>

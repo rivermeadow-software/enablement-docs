@@ -1,7 +1,12 @@
 # Summary
 ---
-In this course you learned about the benefits and features of the RiverMeadow platform to modernize Windows and Linux operating systems running on-premises or in the public cloud.
+In this course you learned about how the RiverMeadow platform can be used to modernize Windows and Linux operating systems running on-premises or in the public cloud.
 
-### Next Steps
+## Additional resources
 
-Now that you've successfully completed this introductory course and developed a foundational understanding of the RiverMeadow platform, you're ready for the more advanced courses that are available.
+The following resources provide additional information on the topics covered in this course.
+
+| Name | Link |
+|------|------|
+| **RiverMeadow Documentation** | [https://docs.rivermeadow.com](https://docs.rivermeadow.com) |
+| **Windows OS Modernization Interactive Demo** | [https://rivermeadow.storylane.io/demo/kyfmbr1kj4ml](https://rivermeadow.storylane.io/demo/kyfmbr1kj4ml) |

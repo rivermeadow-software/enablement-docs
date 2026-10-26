@@ -85,14 +85,14 @@ The following are examples of how the RiverMeadow platform can enable migrations
 <details>
   <summary>**Alibaba to Amazon Web Services (AWS)**</summary>
 
-  Migrate virtual machines running on Microsoft Azure to Amazon Web Services (AWS) EC2 or other AWS ecosystem IaaS solutions like ROSA, NC2 or others.
+  Migrate virtual machines running on Alibaba to Amazon Web Services (AWS) EC2 or other AWS ecosystem IaaS solutions like ROSA, NC2 or others.
 
 </details>
 
 <details>
   <summary>**Amazon Web Services (AWS) to Google Cloud Platform (GCP)**</summary>
 
-  Migrate virtual machines running on Microsoft Azure to Amazon Web Services (AWS) EC2 or other AWS ecosystem IaaS solutions like ROSA, NC2 or others.
+  Migrate virtual machines running on Amazon Web Services (AWS) EC2 to Google Compute Engine (GCE) or other GCP ecosystem IaaS solutions like OpenShift Dedicated, NC2 or others.
 
 </details>
 
@@ -113,7 +113,7 @@ The following are examples of how the RiverMeadow platform can enable migrations
 </details>
 
 <details>
-  <summary>**VMware vSphere to Azure VMware Service (AVS)**</summary>
+  <summary>**VMware vSphere to Azure VMware Solution (AVS)**</summary>
 
   Migrate virtual machines from VMware vSphere running on-premises to the Microsoft managed VMware solution using the RiverMeadow platform.
 
@@ -137,6 +137,6 @@ The following are examples of how the RiverMeadow platform can enable automated 
 <details>
   <summary>**Windows Server Upgrades on VMware vSphere**</summary>
 
-  A powerful use case of the RiverMeadow platform is to utilize the ability to perform automated operating system upgrades without migrating the them to a different platform. This allows organizations to take advantage of this feature without needing to perform a migration.
+  A powerful use case of the RiverMeadow platform is to utilize the ability to perform automated operating system upgrades without migrating them to a different platform. This allows organizations to take advantage of this feature without needing to perform a migration.
 
 </details>

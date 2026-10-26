@@ -31,10 +31,6 @@ The RiverMeadow platform supports migrating workloads from effectively any sourc
 
 The RiverMeadow platform supports the most common versions of Windows and Linux running on x86 or ARM platforms.
 
-:::info
-The platform supports additional operating systems beyond those listed below when the source platform is VMware vSphere.
-:::
-
 <details>
   <summary>**Windows Operating Systems**</summary>
 
@@ -102,13 +98,11 @@ The operating system must be supported on the target hypervisor or cloud.
 
 </details>
 
-
 :::tip
 
 A detailed list of the supported operating systems that can be migrated is available in the RiverMeadow documentation: (https://docs.rivermeadow.com/support-matrix)
 
 :::
-
 
 ## Migration Targets
 RiverMeadow provides a single unified platform to migrate workloads to over a dozen public cloud and on-premises virtualization platforms. This extensive support allows the platform to be utilized for hybrid migrations that include multiple migration targets (i.e. - AWS, Azure, and Red Hat OpenShift).

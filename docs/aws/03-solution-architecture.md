@@ -1,20 +1,30 @@
 # Solution Architecture
 ---
 
-<center>**RiverMeadow Platform Architecture**</center>
+![](./aws_solution_architecture.png)
+
+<center>**RiverMeadow Platform Architecture for AWS**</center>
+
+## Deployment Methods
+
+The RiverMeadow platform supports two deployment methods. In both methods the migration appliance, source worker appliance, and migration utility are deployed into customer managed environments. The deployment methods differ in where the RiverMeadow platform (control plane) runs.
+
+![](./aws_deployment_methods.png)
+
+* **Hosted:** The RiverMeadow platform is hosted and managed by RiverMeadow. The migration appliance deployed in the target AWS account communicates with the hosted platform for migration orchestration. This is the most common deployment method and the one used throughout this course.
+* **Private Deployment:** The RiverMeadow platform is self-hosted as a platform appliance in the customer managed target environment. The migration appliance communicates with the local platform appliance instead of the hosted platform.
 
 ## Solution Components
 
-The following components (VM based or OS based) are utilized in migrations to AWS EC2:
+The following components (VM based or OS based) are utilized in migrations to AWS:
 
-| Component | Description | Location | Migration Method |
-|:-----------:|:-------------:|:----------:|:----------:|
-| **Source Server** | The physical server, virtual machine, or cloud instance that will be migrated to AWS EC2. Direct ineraction with the source server occurs during OS based migrations. | Source Environment | OS Based |
-| **VMware vCenter** | The VMware vSphere management server that provides the REST API for platform interaction. Direct interaction with the vCenter server occurs during VM based migrations. | Source Environment | VM Based |
-| **VMware ESXi** | The VMware vSphere virtualization host that hosts the vSphere virtual machines. Direct interaction with the ESXi host occurs during VM based migrations. | Source Environment | VM Based |
-| **HPE Morpheus VM Essentials Manager** | The HPE Morpheus VM Essentials manager is a virtual appliance that provides a centralized management server for managing multiple HVM clusters. The RiverMeadow solution integrates with the HPE Morpheus VM Essentials REST API hosted on the VM Essentials manager to automate the migration for servers to a managed HVM cluster. | Target Environment | OS and VM Based |
-| **RiverMeadow Platform** | The RiverMeadow hosted platform is the control plane for the RiverMeadow solution and is responsible for migration orchestration, logging, and notifications. Interaction with the platform can be performed using the web interface (migrate.rivermeadow.com) or the platform REST API. | Internet | OS and VM Based |
-| **RiverMeadow Migration Appliance** | The RiverMeadow migration appliance is a virtual appliance (virtual machine) that is deployed to an . The appliance is responsible for local migration orchestration operations in tandem with RiverMeadow platform. | Target Environment | OS and VM Based |
-| **RiverMeadow Source Worker Appliance** | The RiverMeadow source worker appliance is a virtual appliance (virtual machine) that is deployed into the source VMware vSphere deployment. The source worker appliance is responsible for mounting VMware virtual machine snapshots and facilitating the data transfer to target workers running on the HVM hypervisor. The appliance is automatically deployed into the source VMware vSphere environment from the RiverMeadow migration appliance. | Source Environment | VM Based |
-| **RiverMeadow Migration Utility** | The RiverMeadow migration utility is a lightweight utility (less than 30 MB) that is deployed to the source Windows or Linux server for OS based migrations. The utility is responsible for metadata collection and data transfer to the corresponding target instance. The migration utility also enables the advanced optimization and modernization capabilities of the RiverMeadow platform. The utility does not require a reboot of the source system and can be automatically removed following the completion of the migration or modernization. | Source Environment | OS Based |
-| **RiverMeadow Target Worker** | The RiverMeadow target worker is a minimal operating system image (Windows PE or Oracle Enterprise Linux) that is mounted to the target instance during the migration process (initial and delta). It is only used during the migration process and removed before the finalization of the migration. It is responsible for transferring data from the source server or source worker appliance and preparing the migrated server to run on AWS EC2. | Target Environment | OS and VM Based |
+| Component | Description | Type | Location | Migration Method |
+|:-----------:|:-------------:|:----------:|:----------:|:----------:|
+| **Source Server** | The physical server, virtual machine, or cloud instance that will be migrated to AWS. Direct interaction with the source server occurs during OS based migrations. | Server | Source Environment | OS Based |
+| **VMware vCenter** | The VMware vSphere management server that provides the REST API for platform interaction. Direct interaction with the vCenter server occurs during VM based migrations. | Virtual Machine | Source Environment | VM Based |
+| **VMware ESXi** | The VMware vSphere virtualization host that hosts the vSphere virtual machines. Direct interaction with the ESXi host occurs during VM based migrations. | Hypervisor | Source Environment | VM Based |
+| **RiverMeadow Platform** | The RiverMeadow hosted workload mobility platform. The platform provides the platform UI, REST API, migration orchestration, logging, and notifications. Interaction with the platform can be performed using the web interface (migrate.rivermeadow.com) or the platform REST API. | Hosted Platform | RiverMeadow Hosted | OS and VM Based |
+| **RiverMeadow Migration Appliance** | A virtual appliance that is deployed into the target AWS account. The appliance brokers source and target machine configuration metadata used for orchestration and performs local migration orchestration operations in tandem with the RiverMeadow platform. | EC2 Instance | Target AWS Account | OS and VM Based |
+| **RiverMeadow Source Worker Appliance** | A virtual appliance that is deployed into the source VMware vSphere cluster for VM based migrations. The source worker appliance is responsible for mounting virtual machine snapshots and transferring data to target workers. The appliance is automatically deployed into the source vSphere environment from the migration appliance. | VMware Virtual Machine | Source VMware vSphere | VM Based |
+| **RiverMeadow Migration Utility** | A lightweight utility (less than 30 MB) that is deployed to source Windows or Linux systems to enable OS based migrations. The utility facilitates data transfer to the corresponding target worker (1:1 mapping) and enables the optimization and modernization capabilities of the platform. The utility does not require a reboot of the source system and can be automatically removed following the completion of the migration. | Utility | Source Server | OS Based |
+| **RiverMeadow Target Worker** | A minimal image that is mounted on the target EC2 instance during the migration process (initial and delta). The target worker is responsible for transferring data from the source server or source worker appliance to the attached EBS volumes and preparing the system to run on Amazon EC2. It is only used during the migration process and removed before the finalization of the migration. | Boot Image (AMI) | Target AWS Account | OS and VM Based |

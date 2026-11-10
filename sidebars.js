@@ -45,7 +45,7 @@ const sidebars = {
   awsSidebar: [
     {
       type: 'category',
-      label: 'AWS Workshop',
+      label: 'Amazon Web Services (AWS)',
       collapsible: false,
       collapsed: false,
             items: [

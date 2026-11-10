@@ -1,9 +1,11 @@
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import Layout from '@theme/Layout';
 import VMwareMigration from '/img/demo_vmware_migration.png';
 import AWSMigration from '/img/demo_aws_migration.png';
+import AWSTransform from '/img/demo_aws_transform.png';
 import VMEMigration from '/img/demo_vme_migration.png';
 import OpenShiftMigration from '/img/demo_openshift_migration.png';
 import HyperVMigration from '/img/demo_hyperv_migration.png';
@@ -12,17 +14,22 @@ import GCEMigration from '/img/demo_gcp_migration.png';
 import VMEWindowsModernization from '/img/demo_vme_windows_modernization.png';
 import AzureWindowsModernization from '/img/demo_azure_windows_modernization.png';
 import NutanixMigration from '/img/demo_nutanix_migration.png';
-import Select from 'react-select'
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 import React, { useState } from "react";
 import Tooltip from '../components/Tooltip';
-const options = [
+const useCases = [
+  { value: 'discovery', label: 'Discovery' },
   { value: 'mobility', label: 'Mobility' },
   { value: 'optimization', label: 'Optimization' },
   { value: 'modernization', label: 'Modernization' }
-]
+];
+
+const formats = [
+    { value: 'interactive', label: 'Interactive Demo' },
+    { value: 'video', label: 'Video' },
+];
 
 const technologies = [
     { value: 'aws', label: 'Amazon Web Services (AWS)' },
@@ -38,13 +45,26 @@ const technologies = [
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          RiverMeadow Product Demos
-        </Heading>
-        <p className="hero__subtitle">View video demos or take guided tours of the RiverMeadow Workload Mobility Platform — Explore key product capabilities.</p>
-</div>
+    <header className={styles.hero}>
+      <div className={clsx(styles.heroInner, styles.heroInnerSingle)}>
+        <div className={styles.heroCopy}>
+          <span className={styles.eyebrow}>Product demos</span>
+          <Heading as="h1" className={styles.heroTitle}>
+            RiverMeadow Product Demos
+          </Heading>
+          <p className={styles.heroSubtitle}>
+            View video demos or take guided tours of the RiverMeadow Workload Mobility Platform — Explore key product capabilities.
+          </p>
+          <div className={styles.heroActions}>
+            <Link className={clsx(styles.btn, styles.btnPrimary)} to="#demos">
+              Browse demos
+            </Link>
+            <Link className={clsx(styles.btn, styles.btnGhost)} href="https://www.rivermeadow.com/contact-us">
+              Schedule a live demo
+            </Link>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
@@ -66,7 +86,15 @@ const demos = [
         demoType: 'interactive',
         categories: ['aws', "mobility","interactive"],
     },
-   
+    {
+        title: 'RiverMeadow AWS Transform Integration',
+        description: 'Gain optimization and modernization insights as well as accelerate AWS migrations by integrating AWS Transform with the RiverMeadow platform.',
+        image: AWSTransform,
+        iframeSrc: 'https://rivermeadow.storylane.io/demo/ypbalenv94tc?embed=popup',
+        demoType: 'interactive',
+        categories: ['aws', "discovery","interactive"],
+    },
+
 //   {
 //         title: 'Cloud migrations to Microsoft Azure',
 //         description: 'Experience a guided demo of migrating workloads to Microsoft Azure using the RiverMeadow platform. Explore the seamless process and key features that facilitate efficient cloud mobility.',
@@ -309,64 +337,124 @@ function DemoCardWithModal({demoTitle, demoDescription, demoImage, demoIframeSrc
     );
 }
 
-export default function Home() {
-  const [showModal, setShowModal] = React.useState(false);
-  const {siteConfig} = useDocusaurusContext();
-  const [filter, setFilter] = React.useState(false);
-  const [filteredDemos, setFilteredDemos] = React.useState(demos);
+// Sidebar filter groups. Each group's values are matched against a demo's
+// `categories`. Options within a group are OR'd; groups are AND'd together.
+const filterGroups = [
+    { id: 'useCase', title: 'Use case', options: useCases },
+    { id: 'technology', title: 'Technology', options: technologies },
+    { id: 'format', title: 'Format', options: formats },
+];
 
-  function handleFilterChange(selectedOptions) {
-    if (selectedOptions && selectedOptions.length > 0) {
-        const selectedValues = selectedOptions.map(option => option.value);
-        //demos.filter(demo => console.log('Demo categories:', demo.categories));
-        setFilter(true);
-        // Change filtering to match ANY selected value, not ALL
-        const filtered = demos.filter(demo =>
-            //demo.categories.every(category => selectedValues.includes(category))
-            // selectedValues.some(val =>
-            //     ['mobility', 'optimization', 'modernization'].includes(val)
-            //         ? demo.categories.includes(val)
-            //         : technologies.some(tech => tech.value === val && demo.categories.includes(val))
-            // )
-          demo.categories.some(category => selectedValues.includes(category))
-        );
-        setFilteredDemos(filtered);
-    } else {
-        setFilteredDemos(demos);
-    }
+const emptySelection = Object.fromEntries(filterGroups.map(group => [group.id, []]));
+
+function demoMatches(demo, selected, skipGroupId) {
+    return filterGroups.every(group => {
+        if (group.id === skipGroupId) return true;
+        const values = selected[group.id];
+        return values.length === 0 || values.some(value => demo.categories.includes(value));
+    });
+}
+
+function FilterGroup({ group, selected, onToggle }) {
+    const [expanded, setExpanded] = useState(true);
+    // Count what each option would show given the other groups' selections.
+    // Every option is listed; ones with no matching demos are dimmed.
+    const available = demos.filter(demo => demoMatches(demo, selected, group.id));
+    const options = group.options.map(option => ({
+        ...option,
+        count: available.filter(demo => demo.categories.includes(option.value)).length,
+    }));
+
+    return (
+        <div className="demoFilterGroup">
+            <button
+                type="button"
+                className="demoFilterGroupHeader"
+                aria-expanded={expanded}
+                onClick={() => setExpanded(!expanded)}
+            >
+                <span>{group.title}</span>
+                <span className={clsx('demoFilterChevron', !expanded && 'demoFilterChevronCollapsed')} aria-hidden="true" />
+            </button>
+            {expanded && (
+                <ul className="demoFilterOptions">
+                    {options.map(option => {
+                        const checked = selected[group.id].includes(option.value);
+                        return (
+                            <li key={option.value}>
+                                <label className={clsx('demoFilterOption', option.count === 0 && !checked && 'demoFilterOptionEmpty')}>
+                                    <input
+                                        type="checkbox"
+                                        checked={checked}
+                                        onChange={() => onToggle(group.id, option.value)}
+                                    />
+                                    <span className="demoFilterOptionLabel">{option.label}</span>
+                                    <span className="demoFilterOptionCount">{option.count}</span>
+                                </label>
+                            </li>
+                        );
+                    })}
+                </ul>
+            )}
+        </div>
+    );
+}
+
+export default function Home() {
+  const [selected, setSelected] = useState(emptySelection);
+  // Register the in-page anchor so Docusaurus' broken-anchor check knows about it.
+  useBrokenLinks().collectAnchor('demos');
+
+  function toggleFilter(groupId, value) {
+    setSelected(prev => {
+        const values = prev[groupId];
+        return {
+            ...prev,
+            [groupId]: values.includes(value) ? values.filter(v => v !== value) : [...values, value],
+        };
+    });
   }
 
-  const demosToShow = filter ? filteredDemos : demos;
-  
+  const hasFilters = filterGroups.some(group => selected[group.id].length > 0);
+  const demosToShow = demos.filter(demo => demoMatches(demo, selected));
+
   return (
     <Layout
       title="RiverMeadow Product Demos"
       description="Start learning how to migrate, optimize and modernize workloads using the RiverMeadow workload mobility platform.">
       <HomepageHeader />
       <main style={{padding: 24 +'px'}}>
-        <div className="homecontent">
-          <div className="workshops">
-            <div>
-              <div className="demoFiltersGroup">
-                <div className="demoFilters">
-                     {/* <div className="demoFilterItem">
-                        <div className="demoFilterItemTitle">Capability</div>
-                         <Select id="capability-select" className="basic-multi-select" classNamePrefix="select" isMulti options={options} onChange={handleFilterChange} />
-                    </div>  */}
-                    <div className="demoFilterItem">
-                        <div className="demoFilterItemTitle">Filter By Technology</div>
-                         <Select id="technology-select" className="basic-multi-select" classNamePrefix="select" isMulti options={technologies} onChange={handleFilterChange} />
-                    </div>
-                </div>
-                </div>
+        <div id="demos" className="demosLayout">
+          <aside className="demoSidebar">
+            <div className="demoSidebarHeader">
+              <span>Filter by</span>
+              {hasFilters && (
+                <button type="button" className="demoSidebarClear" onClick={() => setSelected(emptySelection)}>
+                  Clear all
+                </button>
+              )}
+            </div>
+            {filterGroups.map(group => (
+              <FilterGroup key={group.id} group={group} selected={selected} onToggle={toggleFilter} />
+            ))}
+          </aside>
+          <div className="demoResults">
+            {demosToShow.length > 0 ? (
               <ul className="demos-grid-list">
-                {demosToShow.map((demo, index) => (
-                  <li key={index}>
+                {demosToShow.map(demo => (
+                  <li key={demo.title}>
                     <DemoCardWithModal demoTitle={demo.title} demoDescription={demo.description} demoImage={demo.image} demoIframeSrc={demo.iframeSrc} categories={demo.categories} demoType={demo.demoType} videoLink={demo.videoLink} />
                   </li>
                 ))}
               </ul>
-            </div>
+            ) : (
+              <div className="demoResultsEmpty">
+                <p>No demos match the selected filters.</p>
+                <button type="button" className="button button--primary" onClick={() => setSelected(emptySelection)}>
+                  Clear filters
+                </button>
+              </div>
+            )}
           </div>
         </div>
         {/* <div className="demoJourney">

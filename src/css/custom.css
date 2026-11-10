@@ -220,11 +220,159 @@ h1 {
   height: 1.75rem;
 }
 
+/* Logo and primary links on the left, pill actions on the right, within a
+   centered column matching the homepage content width (1200px container
+   minus its 40px side padding). */
+.navbar__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.navbar__brand {
+  margin-right: 28px;
+}
+
+.navbar__items--left {
+  gap: 4px;
+}
+
+.navbar__items--left .navbar__link {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar__items--left .navbar__link:hover {
+  background: #f4f8ff;
+  color: #0A76FD;
+}
+
+.navbar__items--right {
+  gap: 10px;
+}
+
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 20px;
+  border: 1.5px solid transparent;
+  border-radius: 999px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* Docusaurus adds an external-link icon to href items; the pills don't need it. */
+.navbar-cta svg {
+  display: none;
+}
+
+.navbar-cta--secondary {
+  border-color: #d5dbe5;
+  color: #151515;
+}
+
+.navbar-cta--secondary:hover {
+  border-color: #0A76FD;
+  color: #0A76FD;
+}
+
+.navbar-cta--primary {
+  background: #0A76FD;
+  color: #ffffff;
+}
+
+.navbar-cta--primary:hover {
+  background: #0657c4;
+  color: #ffffff;
+}
+
+/* In the mobile sidebar these render as regular menu links. */
+.menu .navbar-cta {
+  display: block;
+  height: auto;
+  padding: var(--ifm-menu-link-padding-vertical) var(--ifm-menu-link-padding-horizontal);
+  border: none;
+  border-radius: 0.25rem;
+  background: none;
+  color: var(--ifm-menu-color);
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
 /* ---------- TABLE ---------- */
 
-thead {
-  background-color: #0A76FD !important;
-  color: white !important;
+/* Content tables: one rounded outline, a quiet header, row dividers only. */
+:root {
+  --rm-table-border: #e3e8f0;
+  --rm-table-head-bg: #f6f8fb;
+  --rm-table-head-text: #5b6270;
+  --rm-table-row-hover: #f7faff;
+}
+
+[data-theme='dark'] {
+  --rm-table-border: #2a303b;
+  --rm-table-head-bg: #181d26;
+  --rm-table-head-text: #a3acbb;
+  --rm-table-row-hover: #1b2230;
+}
+
+.markdown table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--rm-table-border);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  font-size: 0.925rem;
+  line-height: 1.55;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.markdown table thead {
+  background: var(--rm-table-head-bg);
+}
+
+.markdown table th,
+.markdown table td {
+  border: 0;
+  padding: 12px 16px;
+  vertical-align: top;
+  /* Markdown alignment markers (:---:) center every cell; long descriptions
+     read better left-aligned. */
+  text-align: left !important;
+}
+
+.markdown table th {
+  border-bottom: 1px solid var(--rm-table-border);
+  color: var(--rm-table-head-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.markdown table tbody tr {
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.markdown table tbody tr + tr td {
+  border-top: 1px solid var(--rm-table-border);
+}
+
+.markdown table tbody tr:hover {
+  background: var(--rm-table-row-hover);
+}
+
+/* Round the header's outer corners so its background follows the outline. */
+.markdown table th:first-child {
+  border-top-left-radius: 11px;
+}
+
+.markdown table th:last-child {
+  border-top-right-radius: 11px;
 }
 
 .card-section-header {
@@ -294,53 +442,181 @@ thead {
   margin-top: auto;
 }
 
+/* Keep demo card badges aligned across a row regardless of title length:
+   the content area fills the card, the description grows to take the
+   leftover space, and the badge row sits at the bottom of it. */
+.demos-grid-list .workshop-card-content {
+  flex: 1;
+  height: auto;
+}
+
+/* Reserve two lines for the title so the description text starts at the
+   same height on every card, even when a title fits on one line. */
+.demos-grid-list .demo-card-logo h3 {
+  min-height: calc(2em * var(--ifm-heading-line-height));
+}
+
+.demos-grid-list .workshop-card-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.demos-grid-list .workshop-card-description .badgeRow {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
 .demoModal {
   width: 70%;
   border: none;
   display: block;
 }
 
-.demoFiltersGroup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* 🔥 centers everything */
-  margin-bottom: 3rem;
-}
+/* ---------- Demo filter sidebar ---------- */
 
-.demoFilters {
+/* Sidebar + results. Wider than .homecontent so a 260px sidebar still fits
+   three 320px cards (260 + 32 gap + 3*320 + 2*24 = 1300). */
+.demosLayout {
   display: grid;
-
-  /* keeps filters from stretching full width */
-  width: 100%;
-  max-width: 500px;
-
-  /* clean responsive layout */
-  grid-template-columns: 1fr;
-  gap: 16px;
-
-  justify-content: center;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 24px 40px;
+  /* Clear the fixed 80px navbar when jumping to #demos from the hero. */
+  scroll-margin-top: 104px;
 }
 
-.demoFilterItem {
-  width: 100%;
+.demoSidebar {
+  position: sticky;
+  top: calc(var(--ifm-navbar-height) + 16px);
   display: flex;
   flex-direction: column;
-  align-items: center;   /* centers label + select */
-  text-align: left;
+  gap: 16px;
 }
 
-#technology-select,
-.basic-multi-select {
-  text-align: left;
+.demoSidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #151515;
+  color: #ffffff;
+  padding: 14px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.demoSidebarClear {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 0.875rem;
+  text-transform: none;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.demoFilterGroup {
+  border-left: 4px solid #0A76FD;
+  box-shadow: 0 0 0 1px #656a7626, 0px 2px 3px 0px #656a761a;
+  background: var(--ifm-background-surface-color);
+}
+
+.demoFilterGroupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  max-width: 400px;   /* 🔥 keeps it clean and centered */
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  color: var(--ifm-font-color-base);
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
-.demoFilterItemTitle {
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: left;
-    padding-bottom: 10px;
+.demoFilterChevron {
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: rotate(45deg) translate(2px, 2px);
+  transition: transform 0.2s ease;
+}
+
+.demoFilterChevronCollapsed {
+  transform: rotate(225deg) translate(2px, 2px);
+}
+
+.demoFilterOptions {
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 14px;
+}
+
+.demoFilterOptions li {
+  margin: 0;
+}
+
+.demoFilterOption {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.demoFilterOption input {
+  margin-top: 4px;
+  accent-color: #0A76FD;
+  cursor: pointer;
+}
+
+.demoFilterOptionLabel {
+  flex: 1;
+}
+
+.demoFilterOptionCount {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.85rem;
+}
+
+.demoFilterOptionEmpty {
+  opacity: 0.5;
+}
+
+.demoResults .demos-grid-list {
+  justify-content: start;
+  margin: 0;
+}
+
+.demoResultsEmpty {
+  padding: 48px 16px;
+  text-align: center;
+}
+
+/* Stack the sidebar above the cards on narrow screens. */
+@media (max-width: 996px) {
+  .demosLayout {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .demoSidebar {
+    position: static;
+  }
+
+  .demoResults .demos-grid-list {
+    justify-content: center;
+  }
 }
 
 .demoJourney {
@@ -427,4 +703,42 @@ thead {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* Image lightbox (see src/clientModules/imageLightbox.js) */
+.markdown img:not(a img) {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(15, 23, 32, 0.85);
+  cursor: zoom-out;
+  animation: image-lightbox-fade 150ms ease-out;
+}
+
+.image-lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #ffffff; /* keeps transparent diagrams readable in dark mode */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes image-lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-lightbox { animation: none; }
 }

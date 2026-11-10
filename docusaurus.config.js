@@ -85,6 +85,8 @@ const config = {
     ],
   ],
 
+  clientModules: [require.resolve('./src/clientModules/imageLightbox.js')],
+
   plugins: [
     [
       '@docusaurus/plugin-content-docs',
@@ -135,36 +137,64 @@ const config = {
         },
 */
           {
-            type: 'dropdown',
+            // Rendered by src/components/NavbarMegaMenu. The first section uses
+            // the plain panel; later sections use the tinted panel. `columns`
+            // sets how many columns of items a section shows.
+            type: 'custom-megaMenu',
             label: 'Courses',
             position: 'left',
-            items: [
+            activeBasePath: '/courses',
+            sections: [
               {
-                label: 'RiverMeadow Fundamentals',
-                to: '/courses/fundamentals/introduction',
-              },
-/*              {
-                label: 'RiverMeadow Advanced',
-                to: '/courses/advanced/introduction',
-              },
-              {
-                label: 'Amazon Web Services (AWS)',
-                to: '/courses/aws/introduction',
-              },
-              {
-                label: 'Microsoft Azure',
-                to: '/courses/azure/introduction',
-              },
-              {
-                label: 'Red Hat OpenShift',
-                to: '/courses/red-hat-openshift/introduction',
-              },
+                title: 'General',
+                items: [
+                  {
+                    label: 'RiverMeadow Fundamentals',
+                    description: 'Learn how the platform migrates, optimizes and modernizes workloads',
+                    to: '/courses/fundamentals/introduction',
+                    icon: 'compass',
+                  },
+/*                  {
+                    label: 'RiverMeadow Advanced',
+                    description: 'Go deeper on platform capabilities',
+                    to: '/courses/advanced/introduction',
+                    icon: 'layers',
+                  },
 */
-              {
-                label: 'HPE Morpheus VM Essentials',
-                to: '/courses/hpe-morpheus-vm-essentials/introduction',
+                ],
               },
-              ],
+              {
+                title: 'By platform',
+                columns: 2,
+                items: [
+                  {
+                    label: 'Amazon Web Services (AWS)',
+                    description: 'Migrate, optimize, and modernize servers on Amazon EC2',
+                    to: '/courses/aws/introduction',
+                    icon: 'cloud',
+                  },
+                  {
+                    label: 'HPE Morpheus VM Essentials',
+                    description: 'Migrate workloads from any source to the HVM hypervisor',
+                    to: '/courses/hpe-morpheus-vm-essentials/introduction',
+                    icon: 'server',
+                  },
+/*                  {
+                    label: 'Microsoft Azure',
+                    description: 'Migrate and modernize workloads on Azure',
+                    to: '/courses/azure/introduction',
+                    icon: 'cloud',
+                  },
+                  {
+                    label: 'Red Hat OpenShift',
+                    description: 'Migrate virtual machines to OpenShift',
+                    to: '/courses/red-hat-openshift/introduction',
+                    icon: 'box',
+                  },
+*/
+                ],
+              },
+            ],
           },
           {
             label: 'Guides',
@@ -177,6 +207,19 @@ const config = {
           position: 'left',
           to: '/demos',
           label: 'Demos',
+        },
+        // Right-side actions, styled as pill buttons in src/css/custom.css.
+        {
+          position: 'right',
+          href: 'https://docs.rivermeadow.com',
+          label: 'Documentation',
+          className: 'navbar-cta navbar-cta--secondary',
+        },
+        {
+          position: 'right',
+          href: 'https://www.rivermeadow.com/contact-us',
+          label: 'Schedule a demo',
+          className: 'navbar-cta navbar-cta--primary',
         },
         ],
       },

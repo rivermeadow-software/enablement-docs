@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="150 0 1625 642" width="1625" height="642" role="img" aria-label="OS based migration network ports and protocols">
+  <title>OS based migration network ports and protocols</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="9" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M2,1.5 L9.5,6 L2,10.5" fill="none" stroke="#1a73e8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="168" y="17" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="348.0" y="60" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">Platform User</text>
+  <text x="348.0" y="88" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">Mgmt. Workstation</text>
+  <rect x="802" y="17" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="982.0" y="60" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">RiverMeadow Platform</text>
+  <text x="982.0" y="88" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">Hosted Platform</text>
+  <rect x="1393" y="17" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="1573.0" y="60" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">AWS REST API</text>
+  <text x="1573.0" y="88" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">Cloud REST API</text>
+  <rect x="802" y="240" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="982.0" y="283" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">Migration Appliance</text>
+  <text x="982.0" y="311" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">AWS EC2 Instance</text>
+  <path d="M544.0,67.0 L784.0,67.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="622.9" y="55" width="82.19999999999999" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="664" y="72" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-443</text>
+  <path d="M1178.0,67.0 L1375.0,67.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="1234.9" y="55" width="82.19999999999999" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="1276" y="72" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-443</text>
+  <path d="M982.0,224.0 L982.0,135.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="998.9" y="168" width="82.19999999999999" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="1040" y="185" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-443</text>
+  <rect x="168" y="525" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="348.0" y="568" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">Source Server</text>
+  <text x="348.0" y="596" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">VM or Physical Server</text>
+  <rect x="1393" y="525" width="360" height="100" rx="14" fill="#ffffff" stroke="#d9dde2" stroke-width="3"/>
+  <text x="1573.0" y="568" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="21" font-weight="700" fill="#1f2933">Target Server</text>
+  <text x="1573.0" y="596" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" fill="#52606d">AWS EC2 Instance</text>
+  <path d="M786.0,250.0 L280,250 L280.0,507.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <path d="M786.0,277.0 L335,277 L335.0,507.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <path d="M786.0,304.0 L390,304 L390.0,507.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <path d="M786.0,331.0 L445,331 L445.0,507.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="594.6" y="238" width="90.8" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="640" y="255" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-5994</text>
+  <rect x="568.8" y="265" width="142.39999999999998" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="640" y="282" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-22 (Linux)</text>
+  <rect x="555.9" y="292" width="168.2" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="640" y="309" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-445 (Windows)</text>
+  <rect x="551.6" y="319" width="176.79999999999998" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="640" y="336" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-5985 (Windows)</text>
+  <path d="M1660.0,509.0 L1660,258 L1180.0,258.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <path d="M1615.0,509.0 L1615,290 L1180.0,290.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <path d="M1178.0,322.0 L1570,322 L1570.0,507.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="1288.9" y="246" width="82.19999999999999" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="1330" y="263" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-443</text>
+  <rect x="1284.6" y="278" width="90.8" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="1330" y="295" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-8888</text>
+  <rect x="1284.6" y="310" width="90.8" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="1330" y="327" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-5994</text>
+  <path d="M1377.0,575.0 L546.0,575.0" fill="none" stroke="#1a73e8" stroke-width="4" stroke-linejoin="miter" marker-end="url(#arrow)"/>
+  <rect x="914.6" y="563" width="90.8" height="24" rx="12" fill="#ffffff" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="960" y="580" text-anchor="middle" font-family="'Source Sans Pro', 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2933">TCP-5994</text>
+</svg>

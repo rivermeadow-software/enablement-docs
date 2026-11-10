@@ -59,7 +59,7 @@ The optimization settings within the migration profile are used to configure sto
 <details>
   <summary>**Modernization Settings**</summary>
 
-The modernization settings within the migration profile are used to configure OS modernization, SQL modernization, and Linux OS conversion. The modernization settings are covered in detail in the [Modernization Workflow](./18-modernization-workflow.md) section.
+The modernization settings within the migration profile are used to configure OS modernization, SQL modernization, and Linux OS conversion.
 
 | Name | Description | Supported Migration Methods |
 |:------:|:------:|:-----------------:|
